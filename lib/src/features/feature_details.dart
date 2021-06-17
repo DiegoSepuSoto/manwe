@@ -62,7 +62,7 @@ class FeatureDetails extends StatelessWidget {
                         Spacer(),
                         Spacer(),
                         Spacer(),
-                        Text("Utilizar la herramienta"),
+                        Text('Utilizar la herramienta'),
                         Spacer(),
                         Icon(Icons.forward),
                         Spacer(),

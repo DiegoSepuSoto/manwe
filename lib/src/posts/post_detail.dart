@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:manwe/src/posts/components/header_back_button.dart';
+import 'package:manwe/src/posts/components/post_categories.dart';
+import 'package:manwe/src/posts/components/service_header.dart';
 import 'package:manwe/src/utils/constants.dart';
 
-class NewsDetails extends StatelessWidget {
-  const NewsDetails();
+class PostDetail extends StatelessWidget {
+  const PostDetail();
 
   @override
   Widget build(BuildContext context) {
@@ -14,99 +17,9 @@ class NewsDetails extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  padding: EdgeInsets.only(left: kDefaultPadding),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: kTextColor,
-                      size: 26.0,
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, 'service-details');
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.only(top: kDefaultPadding),
-                    child: Text(
-                      'Plan de Apoyo Estudiantil',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: kPrimaryColor,
-                        fontSize: 27.0,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(
-                      right: kDefaultPadding, top: kDefaultPadding),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15.0),
-                          margin: EdgeInsets.only(
-                            left: kDefaultPadding,
-                          ),
-                          color: kPrimaryColor,
-                          child: Text(
-                            'Apoyo Académico',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15.0),
-                          margin: EdgeInsets.only(
-                            left: kDefaultPadding,
-                          ),
-                          color: kPrimaryColor,
-                          child: Text(
-                            'Hábitos',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15.0),
-                          margin: EdgeInsets.only(
-                            left: kDefaultPadding,
-                          ),
-                          color: kPrimaryColor,
-                          child: Text(
-                            'Primeros Años',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15.0),
-                          margin: EdgeInsets.only(
-                            left: kDefaultPadding,
-                          ),
-                          color: kPrimaryColor,
-                          child: Text(
-                            'Ramos difíciles',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                HeaderBackButton(),
+                ServiceHeader(),
+                PostCategories(),
                 Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.only(top: kDefaultPadding),

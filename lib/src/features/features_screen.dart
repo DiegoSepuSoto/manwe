@@ -16,29 +16,45 @@ class FeaturesScreen extends StatelessWidget {
               Navigator.pushNamed(context, 'feature-details');
             },
             child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: kPrimaryColor.withOpacity(0.5),
+                    blurRadius: 3,
+                    offset: Offset(3, 3),
+                  ),
+                ],
+              ),
               padding: EdgeInsets.only(
+                bottom: 5.0,
+              ),
+              margin: EdgeInsets.only(
                 left: kDefaultPadding,
                 right: kDefaultPadding,
                 top: kDefaultPadding * 2,
               ),
               child: Column(
                 children: [
-                  Container(
-                    child: Image.asset('assets/images/pomodoro.jpg'),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        right: BorderSide(color: Colors.black),
-                        left: BorderSide(color: Colors.black),
-                        bottom: BorderSide(color: Colors.black),
-                      ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20.0),
+                      topRight: Radius.circular(20.0),
+                    ),
+                    child: Image.asset(
+                      'assets/images/pomodoro.jpg',
+                      fit: BoxFit.fill,
                     ),
                   ),
                   Container(
                     alignment: Alignment.center,
                     width: size.width,
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(20.0),
+                        bottomLeft: Radius.circular(20.0),
+                      ),
                       color: kPrimaryColor,
-                      border: Border.all(color: Colors.black),
                     ),
                     child: Text(
                       'Técnica Pomodoro',
