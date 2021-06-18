@@ -6,15 +6,17 @@ class ServiceHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, 'service-details');
       },
       child: Column(
         children: [
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/images/logo_pae.png'),
-            radius: 60.0,
+          Image.asset(
+            'assets/images/logo_pae.png',
+            height: size.height * 0.14,
           ),
           Container(
             alignment: Alignment.center,
@@ -24,7 +26,7 @@ class ServiceHeader extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: kPrimaryColor,
-                fontSize: 20.0,
+                fontSize: 24.0,
               ),
             ),
           ),

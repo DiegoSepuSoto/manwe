@@ -9,11 +9,14 @@ class PostCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
+      decoration: BoxDecoration(
+        color: kPrimaryColor,
+        borderRadius: BorderRadius.circular(5.0)
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
       margin: EdgeInsets.only(
         left: kDefaultPadding,
       ),
-      color: kPrimaryColor,
       child: Text(
         category,
         style: TextStyle(

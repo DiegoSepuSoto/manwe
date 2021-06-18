@@ -7,7 +7,7 @@ import 'package:manwe/src/shared/service_details_screen.dart';
 class Routes {
   static Map<String, WidgetBuilder> getRoutes() {
     return {
-      'news-details': (BuildContext context) => PostDetail(),
+      'post-details': (BuildContext context) => PostDetail(),
       'service-details': (BuildContext context) => ServiceDetailsScreen(),
       'feature-details': (BuildContext context) => FeatureDetails(),
       'pomodoro': (BuildContext context) => PomodoroScreen(),

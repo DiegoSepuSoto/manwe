@@ -18,7 +18,7 @@ class PostCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'news-details');
+        Navigator.pushNamed(context, 'post-details');
       },
       child: Container(
         padding: EdgeInsets.only(
@@ -77,7 +77,7 @@ class PostCard extends StatelessWidget {
                         title,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 15.0,
+                          fontSize: 17.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -86,7 +86,12 @@ class PostCard extends StatelessWidget {
                     Spacer(),
                     Container(
                       child: Text(
-                        overview
+                        overview,
+                        style: TextStyle(
+                          fontSize: 16.0
+                        ),
+                        maxLines: size.height > 750 ? 5 : 4,
+                        overflow: TextOverflow.ellipsis
                       ),
                     ),
                     Spacer(),

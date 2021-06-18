@@ -10,7 +10,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final bool hasTopNotch = MediaQuery.of(context).viewPadding.top > 30.0;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
@@ -18,9 +17,10 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       child: Container(
         padding: EdgeInsets.only(
-            top: hasTopNotch ? size.height * 0.08 : size.height * 0.06),
+          top: size.height * 0.05,
+        ),
         width: size.width,
-        height: hasTopNotch ? 210.0 : 180.0,
+        height: size.height > 750.0 ? size.height * 0.22 : size.height * 0.25,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
@@ -31,6 +31,13 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
               kSecondaryColor,
             ],
           ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 3,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
         child: Column(
           children: [
