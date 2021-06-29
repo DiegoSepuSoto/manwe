@@ -31,7 +31,7 @@ class PostCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: [
             BoxShadow(
-              color: kPrimaryColor.withOpacity(0.5),
+              color: kPrimaryColor.withOpacity(0.25),
               blurRadius: 3,
               offset: Offset(3, 3),
             ),

@@ -44,8 +44,12 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 10.0),
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/profile.png'),
-                radius: 40.0,
+                radius: 42,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/profile.png'),
+                  radius: 40.0,
+                ),
               ),
             ),
             Text(

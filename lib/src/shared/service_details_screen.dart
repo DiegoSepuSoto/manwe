@@ -54,7 +54,123 @@ class ServiceDetailsScreen extends StatelessWidget {
                     top: kDefaultPadding,
                   ),
                   child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut consectetur nunc. Cras quis venenatis metus, nec varius velit. Etiam auctor eget libero egestas mattis. Cras in est at nunc interdum vulputate. Vestibulum vitae facilisis metus, quis mattis odio. Praesent iaculis id leo eu pretium. Nulla in justo at nunc egestas luctus nec ut quam. Sed nisi ligula, gravida et venenatis at, elementum sed leo. Donec condimentum neque eget rhoncus vestibulum. Vivamus porta eros et odio posuere aliquet. Vivamus sed massa nunc. Vestibulum blandit auctor libero at feugiat. Fusce urna nunc, pretium ut magna in, laoreet porta turpis. Donec vitae lorem in neque aliquam euismod.\n Donec bibendum augue eget justo suscipit, quis auctor purus sagittis. Nulla facilisis erat erat, a tristique nulla euismod nec. Mauris feugiat velit quis egestas placerat. Nullam tincidunt urna non augue hendrerit, eu rutrum quam scelerisque. Sed mauris massa, volutpat id bibendum posuere, vestibulum sed erat. In tortor felis, mattis ut risus quis, viverra lobortis nunc. Nam sodales, libero maximus volutpat volutpat, eros mauris iaculis lectus, ac tincidunt nisi ex vel dolor. In interdum augue sed lectus consectetur, quis ullamcorper sapien malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer malesuada elit fermentum ligula fringilla, vel facilisis risus efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus\n Etiam sed gravida dui, sed viverra purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur et posuere risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin vel elit tristique, pulvinar metus at, euismod metus. Nullam eget posuere purus. Quisque placerat fermentum massa. Sed vestibulum consectetur ipsum et facilisis. Nam orci dolor, elementum nec magna ut, tempus luctus justo. Duis libero magna, efficitur in sodales quis, blandit ac sapien. Integer ac nisl lacus\n In mauris ligula, commodo et sem at, hendrerit euismod neque. In iaculis neque ut ante imperdiet iaculis. Nulla enim leo, facilisis id facilisis nec, laoreet id tellus. Quisque sollicitudin, tortor eu pharetra malesuada, elit ex tincidunt augue, feugiat elementum urna orci at lectus. Etiam malesuada lorem ante, vel fermentum metus semper at. Sed lacinia et ante sed feugiat. Aliquam egestas, nibh ac auctor consectetur, libero tortor consectetur orci, at commodo mauris felis et quam\n Nullam molestie, ante ac tempus placerat, ex libero fermentum nunc, at hendrerit ligula nisi a ante. Pellentesque nec sem vulputate, auctor metus vel, mollis augue. Praesent vitae risus sit amet risus maximus interdum. Quisque tortor ipsum, pellentesque ut libero a, facilisis malesuada augue. Cras vitae urna eros. Donec eu nisi a enim molestie efficitur. Nullam mattis, purus sollicitudin consectetur sagittis, lacus libero gravida orci, et efficitur nulla lacus et justo.'),
+                    '¿Qué es el plan de apoyo estudiantil?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: kTextColor,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    'Es un programa de acompañamiento que se aboca a la atención personalizada de estudiantes de primer año, con el objetivo de promover su desarrollo integral y apoyar la inserción a la vida universitaria y a la carrera.',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    'Abarca tres áreas de trabajo, las cuales son aspectos críticos que inciden en la deserción de los y las estudiantes: Estrategias de aprendizaje, análisis vocacional y, salud física y emocional, las cuales facilitan la inserción institucional y social, junto con aportar al desarrollo de una mayor competitividad del estudiantado.',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    '¿Qué es un tutor o tutora PAE?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: kTextColor,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    'Un tutor o tutora es la persona que, mediante la acción individualizada, acompaña a un grupo de estudiantes a su cargo. Ellos y ellas Intercambia información, experiencias y apoyo que retroalimentan el trabajo individual y colectivo con los tutorados y tutoradas.',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    '¿Qué significa ser tutorado o tutorada PAE?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: kTextColor,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    'Ser tutorado o tutorada PAE significa que se cuenta con acompañamiento profesional y tutorial psicosocial durante el primer año de carrera.',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    'Apoyo Tutorial',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: kTextColor,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    '\u2022 Grupos de estudio de ramos críticos\n\u2022 Préstamo de material como guías de trabajo, apuntes, u otros.\n\u2022 Orientación sobre estrategias de estudio\n\u2022 Estrategias para la gestión del tiempo de estudio\n\u2022 Información sobre ramos y profesores\n\u2022 Información sobre servicios de apoyo UTEM\n\u2022 Orientación sobre la carrera\n\u2022 Apoyo en la toma de ramos del 2do semestre\n\u2022 Actividades sociorecreativas\n\u2022 Otras actividades universitarias',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: kDefaultPadding * 2,
