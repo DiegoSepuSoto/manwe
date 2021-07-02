@@ -31,7 +31,7 @@ class PostCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: [
             BoxShadow(
-              color: kPrimaryColor.withOpacity(0.25),
+              color: kTextColor.withOpacity(0.5),
               blurRadius: 3,
               offset: Offset(3, 3),
             ),
@@ -47,8 +47,8 @@ class PostCard extends StatelessWidget {
               child: Container(
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.0),
-                    bottomLeft: Radius.circular(20.0),
+                    topLeft: Radius.circular(10.0),
+                    bottomLeft: Radius.circular(10.0),
                   ),
                   child: Image.asset(
                     image,
@@ -61,8 +61,8 @@ class PostCard extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20.0),
-                  bottomRight: Radius.circular(20.0),
+                  topRight: Radius.circular(10.0),
+                  bottomRight: Radius.circular(10.0),
                 ),
               ),
               width: size.width * 0.5,

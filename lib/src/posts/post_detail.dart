@@ -17,7 +17,25 @@ class PostDetail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HeaderBackButton(),
+                Row(
+                  children: [
+                    HeaderBackButton(),
+                    Spacer(),
+                    Container(
+                      padding: EdgeInsets.only(right: kDefaultPadding),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'service-details');
+                        },
+                        child: Icon(
+                          Icons.info,
+                          color: kTextColor,
+                          size: 30.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 ServiceHeader(),
                 PostCategories(),
                 Container(
