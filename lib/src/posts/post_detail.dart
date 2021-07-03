@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manwe/src/posts/components/header_back_button.dart';
+import 'package:manwe/src/posts/components/header_info_button.dart';
 import 'package:manwe/src/posts/components/post_categories.dart';
 import 'package:manwe/src/posts/components/service_header.dart';
 import 'package:manwe/src/utils/constants.dart';
@@ -17,25 +18,7 @@ class PostDetail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    HeaderBackButton(),
-                    Spacer(),
-                    Container(
-                      padding: EdgeInsets.only(right: kDefaultPadding),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, 'service-details');
-                        },
-                        child: Icon(
-                          Icons.info,
-                          color: kTextColor,
-                          size: 30.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                HeaderButtons(),
                 ServiceHeader(),
                 PostCategories(),
                 Container(
@@ -145,6 +128,21 @@ class PostDetail extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class HeaderButtons extends StatelessWidget {
+  const HeaderButtons();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        HeaderBackButton(),
+        Spacer(),
+        HeaderInfoButton(),
+      ],
     );
   }
 }

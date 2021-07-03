@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:manwe/src/shared/service_details/components/social_media_section.dart';
 import 'package:manwe/src/utils/constants.dart';
 
 class ServiceDetailsScreen extends StatelessWidget {
@@ -6,6 +7,8 @@ class ServiceDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -172,6 +175,22 @@ class ServiceDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: kDefaultPadding,
+                  ),
+                  child: Text(
+                    'Comunícate con nosotros!',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: kTextColor,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+                SocialMediaSection(),
                 SizedBox(
                   height: kDefaultPadding * 2,
                 )
