@@ -37,18 +37,18 @@ class PostCard extends StatelessWidget {
             ),
           ],
         ),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: size.width * 0.25,
-              height: size.height * 0.27,
+              width: size.width * 0.65,
+              height: size.height * 0.2,
               child: Container(
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10.0),
-                    bottomLeft: Radius.circular(10.0),
+                    topRight: Radius.circular(10.0),
                   ),
                   child: Image.asset(
                     image,
@@ -61,12 +61,12 @@ class PostCard extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10.0),
                   bottomRight: Radius.circular(10.0),
+                  bottomLeft: Radius.circular(10.0),
                 ),
               ),
-              width: size.width * 0.5,
-              height: size.height * 0.27,
+              width: size.width * 0.65,
+              height: size.height * 0.25,
               child: Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Column(

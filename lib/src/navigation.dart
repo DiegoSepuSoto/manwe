@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:manwe/src/features/features_screen.dart';
 import 'package:manwe/src/posts/posts_screen.dart';
 import 'package:manwe/src/notifications/notifications_screen.dart';
+import 'package:manwe/src/search/search_screen.dart';
 import 'package:manwe/src/shared/components/main_app_bar.dart';
 import 'package:manwe/src/utils/constants.dart';
 
@@ -19,7 +20,7 @@ class _NavigationState extends State<Navigation> {
 
   static const List<Widget> _pages = [
     PostsScreen(),
-    FeaturesScreen(),
+    SearchScreen(),
     NotificationsScreen(),
   ];
 
@@ -42,8 +43,10 @@ class _NavigationState extends State<Navigation> {
       body: Column(
         children: [
           MainAppBar(),
-          Container(
-            child: _pages.elementAt(_selectedIndex),
+          Expanded(
+            child: Container(
+              child: _pages.elementAt(_selectedIndex),
+            ),
           ),
         ],
       ),
@@ -53,12 +56,12 @@ class _NavigationState extends State<Navigation> {
         onTabChangedListener: _onItemTapped,
         tabs: [
           TabData(
-            iconData: Icons.file_copy_rounded,
+            iconData: Icons.home,
             title: 'Publicaciones',
           ),
           TabData(
-            iconData: Icons.edit,
-            title: 'Herramientas',
+            iconData: Icons.search,
+            title: 'Buscar',
           ),
           TabData(
             iconData: Icons.notifications_active,

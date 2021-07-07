@@ -11,6 +11,9 @@ class PostsSection extends StatelessWidget {
 
     return Container(
       width: size.width,
+      padding: EdgeInsets.only(
+        bottom: kDefaultPadding,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,7 +29,7 @@ class PostsSection extends StatelessWidget {
                   children: [
                     TextSpan(text: 'Últimas publicaciones de '),
                     TextSpan(
-                      text: 'autocuidado',
+                      text: 'PAE',
                       style: TextStyle(
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
