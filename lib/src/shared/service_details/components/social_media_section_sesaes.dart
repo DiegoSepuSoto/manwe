@@ -2,22 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:manwe/src/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SocialMediaSection extends StatelessWidget {
-  const SocialMediaSection();
+class SocialMediaSectionSESAES extends StatelessWidget {
+  const SocialMediaSectionSESAES();
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    final String facebookURL = 'https://www.facebook.com/plandeapoyoestudiantil';
-    final String instagramURL = 'https://www.instagram.com/pae_utem';
-    final String webSiteURL = 'https://vrac.utem.cl/estudiantes/plan-de-apoyo-estudiantil';
-    final String sendEmailURL = 'mailto:pae@utem.cl';
-
-    void handleFacebookButton() async {
-      await canLaunch(facebookURL)
-          ? await launch(facebookURL)
-          : throw 'Could not launch $facebookURL';
-    }
+    final String instagramURL = 'https://www.instagram.com/sesaes.utem';
+    final String webSiteURL = 'https://admision.utem.cl/beneficios-estudiantes-utem/salud';
+    final String sendEmailURL = 'mailto:enfermeria@utem.cl';
 
     void handleInstagramButton() async {
       await canLaunch(instagramURL)
@@ -50,20 +42,6 @@ class SocialMediaSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: handleFacebookButton,
-                  style: ElevatedButton.styleFrom(
-                    primary: Color(0xff1778F2),
-                  ),
-                  child: Text(
-                    'Facebook',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
-                  ),
-                ),
-                Spacer(),
-                ElevatedButton(
                   onPressed: handleInstagramButton,
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xffC21E99),
@@ -90,34 +68,17 @@ class SocialMediaSection extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              left: kDefaultPadding,
-              right: kDefaultPadding,
-              top: kDefaultPadding,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ConstrainedBox(
-                  constraints: BoxConstraints.tightFor(
-                    width: size.width * 0.7,
-                    height: 40,
+                Spacer(),
+                ElevatedButton(
+                  onPressed: handleWebSiteButton,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xff02ACB3),
                   ),
-                  child: ElevatedButton(
-                    onPressed: handleWebSiteButton,
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xff02ACB3),
-                    ),
-                    child: Text(
-                      'Sitio Web',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
-                      ),
+                  child: Text(
+                    'Sitio Web',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
                     ),
                   ),
                 ),

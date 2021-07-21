@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:manwe/src/posts/components/posts_section_sesaes.dart';
 
-import 'components/posts_section.dart';
+import 'components/posts_section_pae.dart';
 
 class PostsScreen extends StatelessWidget {
   const PostsScreen();
@@ -12,8 +13,8 @@ class PostsScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          PostsSection(),
-          PostsSection(),
+          PostsSectionPAE(),
+          PostsSectionSESAES()
         ],
       ),
     );

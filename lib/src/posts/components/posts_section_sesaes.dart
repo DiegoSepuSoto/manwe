@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:manwe/src/posts/components/post_card.dart';
 import 'package:manwe/src/utils/constants.dart';
 
-class PostsSection extends StatelessWidget {
-  const PostsSection();
+class PostsSectionSESAES extends StatelessWidget {
+  const PostsSectionSESAES();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class PostsSection extends StatelessWidget {
                   children: [
                     TextSpan(text: 'Últimas publicaciones de '),
                     TextSpan(
-                      text: 'PAE',
+                      text: 'SESAES',
                       style: TextStyle(
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
@@ -49,28 +49,11 @@ class PostsSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   PostCard(
-                    title: 'Hábitos de estudio',
-                    image: 'assets/images/publications/publicacion_1.jpg',
+                    title: 'Alimentos Ácidos',
+                    image: 'assets/images/publications/publicacion_5.jpg',
                     overview:
-                        'Para terminar la semana y empezar con un buen descansar te dejamos algunos tips de hábitos de estudio',
-                  ),
-                  PostCard(
-                    title: 'Concurso Día del Libro',
-                    image: 'assets/images/publications/publicacion_2.jpg',
-                    overview:
-                        'TENEMOS CONCURSO PARA CELEBRAR EL DÍA DEL LIBRO 😬📚🎊🎉',
-                  ),
-                  PostCard(
-                    title: 'Felíz día Mamá',
-                    image: 'assets/images/publications/publicacion_3.jpg',
-                    overview:
-                        'Un afectuoso saludo a las mamás que conforman la comunidad UTEM, sabemos que durante este periodo esta labor ha sido más compleja que nunca',
-                  ),
-                  PostCard(
-                    title: '¿Quién Soy?',
-                    image: 'assets/images/publications/publicacion_4.jpg',
-                    overview:
-                        'Al plantearnos la pregunta: ¿Quién soy yo? seguramente, una de las primeras cosas que viene a nuestra cabeza...',
+                        '¿Sabias que los alimentos acidos pueden dañar tus dientes?.',
+                    detailRoute: 'alimentos-acidos',
                   ),
                 ],
               ),

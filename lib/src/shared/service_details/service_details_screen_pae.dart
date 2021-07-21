@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/shared/service_details/components/social_media_section.dart';
+import 'package:manwe/src/shared/service_details/components/social_media_section_pae.dart';
 import 'package:manwe/src/utils/constants.dart';
 
-class ServiceDetailsScreen extends StatelessWidget {
-  const ServiceDetailsScreen();
+class ServiceDetailsScreenPAE extends StatelessWidget {
+  const ServiceDetailsScreenPAE();
 
   @override
   Widget build(BuildContext context) {
@@ -190,7 +190,7 @@ class ServiceDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SocialMediaSection(),
+                SocialMediaSectionPAE(),
                 SizedBox(
                   height: kDefaultPadding * 2,
                 )

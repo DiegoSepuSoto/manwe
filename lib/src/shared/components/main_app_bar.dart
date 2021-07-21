@@ -47,13 +47,13 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
                 radius: 44,
                 backgroundColor: Colors.white,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/profile.png'),
+                  backgroundImage: AssetImage('assets/images/profile.jpg'),
                   radius: 40.0,
                 ),
               ),
             ),
             Text(
-              'Diego Sepúlveda',
+              'Estudiante UTEM',
               style: TextStyle(
                 fontSize: 22.0,
                 color: Colors.white,

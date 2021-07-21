@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:manwe/src/posts/components/header_back_button.dart';
 import 'package:manwe/src/posts/components/header_info_button.dart';
 import 'package:manwe/src/posts/components/post_categories.dart';
-import 'package:manwe/src/posts/components/service_header.dart';
+import 'package:manwe/src/posts/components/service_header_pae.dart';
+import 'package:manwe/src/posts/components/service_header_sesaes.dart';
 import 'package:manwe/src/utils/constants.dart';
 
-class PostDetail extends StatelessWidget {
-  const PostDetail();
+class AlimentosAcidos extends StatelessWidget {
+  const AlimentosAcidos();
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,15 @@ class PostDetail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 HeaderButtons(),
-                ServiceHeader(),
-                PostCategories(),
+                ServiceHeaderSESAES(),
+                PostCategories(
+                  categories: ['Salud física', 'Salud dental', 'Alimentación'],
+                ),
                 Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.only(top: kDefaultPadding),
                   child: Text(
-                    'Hábitos de Estudio',
+                    'Alimentos Ácidos',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24.0,
@@ -34,9 +37,14 @@ class PostDetail extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  padding: EdgeInsets.only(top: kDefaultPadding),
+                  padding: EdgeInsets.only(
+                    top: kDefaultPadding,
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                  ),
                   child: Text(
-                    'Organiza tu tiempo!',
+                    '¿Sabías que los alimentos ácidos pueden dañar tus dientes?',
+                    textAlign: TextAlign.center,
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                   ),
@@ -48,7 +56,7 @@ class PostDetail extends StatelessWidget {
                     top: 10.0,
                   ),
                   child: Text(
-                    'Lograr una buena planificación y organización del tiempo es fundamental para mantener un equilibrio entre los diversos ámbitos que forman parte del desarrollo personal (estudio, tiempo libre, descanso, etc.). Es vital continuar realizando hobbies, deporte, destinar las horas necesarias para elsieño y descanso, compartir y socializar con otras personas, así como mantener una buena aimentación.',
+                    'El consumo constante de alimentos ácidos puede llegar a desgastar los dientes, dejando la dentina o segunda capa del diente expuesta, esto tiene consecuencias directas en tu salud bucal.',
                     style: TextStyle(
                       fontSize: 17.0,
                     ),
@@ -56,9 +64,14 @@ class PostDetail extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  padding: EdgeInsets.only(top: kDefaultPadding),
+                  padding: EdgeInsets.only(
+                    top: kDefaultPadding,
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                  ),
                   child: Text(
-                    'Distribuye las materias!',
+                    'Efectos de los ácidos sobre los dientes:',
+                    textAlign: TextAlign.center,
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                   ),
@@ -70,7 +83,33 @@ class PostDetail extends StatelessWidget {
                     top: 10.0,
                   ),
                   child: Text(
-                    'Es erróneo pensar que se requiere dedicar el mismo tiempo de estudio para todas las asignaturas. Es importante reconoceer qué materias son más difíciles y necesitamos dedicarles más tiempo . También se recomienda que las asignaturas parecidas no se estudien seguidas.',
+                    '1) Erosion dental: Desgaste del esmalte exponiendo la dentina',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: 10.0,
+                  ),
+                  child: Text(
+                    '2) Pérdida de la tonalidad: Los dientes al estar desgastados tienden a verse más oscuros o amarillentos.',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: 10.0,
+                  ),
+                  child: Text(
+                    '3) Sensibilidad: Dolor o sensibilidad principalmente ante cambios de temperatura',
                     style: TextStyle(
                       fontSize: 17.0,
                     ),
@@ -78,9 +117,14 @@ class PostDetail extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  padding: EdgeInsets.only(top: kDefaultPadding),
+                  padding: EdgeInsets.only(
+                    top: kDefaultPadding,
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                  ),
                   child: Text(
-                    'Practica!',
+                    'Debes controlar el consumo:',
+                    textAlign: TextAlign.center,
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                   ),
@@ -92,19 +136,23 @@ class PostDetail extends StatelessWidget {
                     top: 10.0,
                   ),
                   child: Text(
-                    'La única forma de recordad e integrar los nuevos aprendizajes es mantenerlos de forma permanente. Invertir tiempo en revisar los contenidos nuevos después de la clase, repasar y asimilar la información, complementar alguna idea con material bibliográfico extra.',
+                    'Alimentos cítricos: Principalmente frutas con alto contenido ácido como limón y naranja.',
                     style: TextStyle(
                       fontSize: 17.0,
                     ),
                   ),
                 ),
                 Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.only(top: kDefaultPadding),
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    top: 10.0,
+                  ),
                   child: Text(
-                    'Si hay dudas, pregunta!',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                    'Bebidas gaseosas carbonatadas: Bebidas gasificadas cola comúnmente son las más ácidas',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
                   ),
                 ),
                 Container(
@@ -114,7 +162,7 @@ class PostDetail extends StatelessWidget {
                     top: 10.0,
                   ),
                   child: Text(
-                    'Dedica tiempo para revisar las materias antes de la clase, esto te permite revisar y confirmar la comprensión de la información recogida e identificar las dudas para clarificarlas en la clase siguiente.',
+                    'Alimentos enlatados de alto contenido cítrico para su conservación',
                     style: TextStyle(
                       fontSize: 17.0,
                     ),
@@ -141,7 +189,9 @@ class HeaderButtons extends StatelessWidget {
       children: [
         HeaderBackButton(),
         Spacer(),
-        HeaderInfoButton(),
+        HeaderInfoButton(
+          serviceDetailsRoute: 'service-details-sesaes',
+        ),
       ],
     );
   }

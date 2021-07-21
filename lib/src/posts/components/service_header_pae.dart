@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:manwe/src/utils/constants.dart';
 
-class ServiceHeader extends StatelessWidget {
-  const ServiceHeader();
+class ServiceHeaderPAE extends StatelessWidget {
+  const ServiceHeaderPAE();
 
   @override
   Widget build(BuildContext context) {

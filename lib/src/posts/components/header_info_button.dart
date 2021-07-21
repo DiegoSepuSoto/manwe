@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:manwe/src/utils/constants.dart';
 
 class HeaderInfoButton extends StatelessWidget {
-  const HeaderInfoButton({Key? key}) : super(key: key);
+  final String serviceDetailsRoute;
+
+  const HeaderInfoButton({required this.serviceDetailsRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class HeaderInfoButton extends StatelessWidget {
       padding: EdgeInsets.only(right: kDefaultPadding),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, 'service-details');
+          Navigator.pushNamed(context, serviceDetailsRoute);
         },
         child: Icon(
           Icons.info,

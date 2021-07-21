@@ -3,32 +3,25 @@ import 'package:manwe/src/posts/components/post_category.dart';
 import 'package:manwe/src/utils/constants.dart';
 
 class PostCategories extends StatelessWidget {
-  const PostCategories();
+  final List<String> categories;
+
+  const PostCategories({required this.categories});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-          right: kDefaultPadding, top: kDefaultPadding),
-      child: SingleChildScrollView(
+      height: 45.0,
+      padding: EdgeInsets.only(right: kDefaultPadding, top: kDefaultPadding),
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: categories.length,
         scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            PostCategory(
-              category: 'Apoyo Académico',
-            ),
-            PostCategory(
-              category: 'Hábitos',
-            ),
-            PostCategory(
-              category: 'Primeros Años',
-            ),
-            PostCategory(
-              category: 'Ramos difíciles',
-            ),
-          ],
-        ),
-      ),
+        itemBuilder: (BuildContext ctx, int index) {
+          return PostCategory(
+            category: categories[index],
+          );
+        },
+      )
     );
   }
 }

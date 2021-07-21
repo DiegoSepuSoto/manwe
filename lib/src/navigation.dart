@@ -1,12 +1,12 @@
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:manwe/src/features/features_screen.dart';
 import 'package:manwe/src/posts/posts_screen.dart';
 import 'package:manwe/src/notifications/notifications_screen.dart';
 import 'package:manwe/src/search/search_screen.dart';
 import 'package:manwe/src/shared/components/main_app_bar.dart';
 import 'package:manwe/src/utils/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation();
@@ -69,6 +69,17 @@ class _NavigationState extends State<Navigation> {
           )
         ],
       ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: kPrimaryColor,
+          child: Icon(Icons.mail_outline),
+          onPressed: handleSendFeedback,
+        )
     );
   }
+}
+
+void handleSendFeedback() async {
+  await canLaunch('mailto:diego.sepulvedas@utem.cl?subject=Feedback%20App%20K%C3%BCmelen')
+      ? await launch('mailto:diego.sepulvedas@utem.cl?subject=Feedback%20App%20K%C3%BCmelen')
+      : throw 'Could not launch mailto:diego.sepulvedas@utem.cl';
 }
