@@ -51,23 +51,30 @@ class _NavigationState extends State<Navigation> {
         ],
       ),
       // appBar: buildAppBar(),
-      bottomNavigationBar: FancyBottomNavigation(
-        textColor: kTextColor,
-        onTabChangedListener: _onItemTapped,
-        tabs: [
-          TabData(
-            iconData: Icons.home,
-            title: 'Publicaciones',
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: SafeArea(
+          child: FancyBottomNavigation(
+            textColor: kTextColor,
+            onTabChangedListener: _onItemTapped,
+            iconTextOffScreen: 6,
+            hasElevation: false,
+            tabs: [
+              TabData(
+                iconData: Icons.home,
+                title: 'Publicaciones',
+              ),
+              TabData(
+                iconData: Icons.search,
+                title: 'Buscar',
+              ),
+              TabData(
+                iconData: Icons.notifications_active,
+                title: 'Notificaciones',
+              )
+            ],
           ),
-          TabData(
-            iconData: Icons.search,
-            title: 'Buscar',
-          ),
-          TabData(
-            iconData: Icons.notifications_active,
-            title: 'Notificaciones',
-          )
-        ],
+        ),
       ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: kPrimaryColor,

@@ -81,9 +81,11 @@ packages:
   fancy_bottom_navigation:
     dependency: "direct main"
     description:
-      name: fancy_bottom_navigation
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: master
+      resolved-ref: "4c542b7a9707fc7d8f410ac4c7e26458091a4156"
+      url: "https://github.com/DiegoSepuSoto/fancy_bottom_navigation"
+    source: git
     version: "0.3.3"
   flutter:
     dependency: "direct main"
