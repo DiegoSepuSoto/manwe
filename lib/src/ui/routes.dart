@@ -5,9 +5,6 @@ import 'package:manwe/src/ui/posts/content/quien_soy.dart';
 import 'package:manwe/src/ui/shared/service_details/service_details_screen_pae.dart';
 import 'package:manwe/src/ui/shared/service_details/service_details_screen_sesaes.dart';
 
-import 'features/feature_details.dart';
-import 'features/features_screens/pomodoro/pomodoro_screen.dart';
-
 class Routes {
   static Map<String, WidgetBuilder> getRoutes() {
     return {
@@ -16,8 +13,6 @@ class Routes {
       'alimentos-acidos': (BuildContext context) => AlimentosAcidos(),
       'service-details-pae': (BuildContext context) => ServiceDetailsScreenPAE(),
       'service-details-sesaes': (BuildContext context) => ServiceDetailsScreenSESAES(),
-      'feature-details': (BuildContext context) => FeatureDetails(),
-      'pomodoro': (BuildContext context) => PomodoroScreen(),
     };
   }
 }
