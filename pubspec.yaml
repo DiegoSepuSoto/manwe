@@ -29,6 +29,9 @@ dependencies:
       url: https://github.com/DiegoSepuSoto/fancy_bottom_navigation
       ref: master
   url_launcher: ^6.0.8
+  flutter_bloc: ^7.1.0
+  equatable: ^2.0.3
+  dio: ^4.0.0
 
 dev_dependencies:
   flutter_test:

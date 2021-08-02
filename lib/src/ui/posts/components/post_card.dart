@@ -40,10 +40,10 @@ class PostCard extends StatelessWidget {
                   topLeft: Radius.circular(10.0),
                   topRight: Radius.circular(10.0),
                 ),
-                child: Image.asset(
-                  image,
+                child: Image.network(
+                  image.replaceAll("localhost", "10.0.2.2"),
                   fit: BoxFit.cover,
-                ),
+                )
               ),
             ),
           ),
@@ -78,7 +78,7 @@ class PostCard extends StatelessWidget {
                     child: Text(
                       overview,
                       style: TextStyle(fontSize: 16.0),
-                      maxLines: size.height > 750 ? 3 : 2,
+                      maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
