@@ -23,17 +23,17 @@ class PostsScreen extends StatelessWidget {
             return Container();
           } else if (state is HomeSuccessLoad) {
             final servicesWithPosts = state.homePage.servicesWithPosts;
-            return Container(
-              child: ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: servicesWithPosts.length,
-                  itemBuilder: (context, index) {
-                    return PostsSection(
-                      serviceNameAbbreviation:
-                          servicesWithPosts[index].abbreviation,
-                      postsForPreview: servicesWithPosts[index].postsForPreview,
-                    );
-                  }),
+            return ListView.builder(
+              padding: EdgeInsets.only(top: 0.0),
+              scrollDirection: Axis.vertical,
+              itemCount: servicesWithPosts.length,
+              itemBuilder: (context, index) {
+                return PostsSection(
+                  serviceNameAbbreviation:
+                      servicesWithPosts[index].abbreviation,
+                  postsForPreview: servicesWithPosts[index].postsForPreview,
+                );
+              },
             );
           } else {
             return SingleChildScrollView(
