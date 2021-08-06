@@ -10,14 +10,14 @@ class HeaderInfoButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(right: kDefaultPadding),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, serviceDetailsRoute);
-        },
-        child: Icon(
-          Icons.info,
-          color: kTextColor,
-          size: 30.0,
+      child: CircleAvatar(
+        backgroundColor: kPrimaryColor,
+        radius: 25.0,
+        child: IconButton(
+          color: Colors.white,
+          alignment: Alignment.center,
+          icon:  Icon(Icons.info),
+          onPressed: () => Navigator.pushNamed(context, serviceDetailsRoute),
         ),
       ),
     );

@@ -10,10 +10,6 @@ class ServiceHeaderPAE extends StatelessWidget {
 
     return Column(
       children: [
-        Image.asset(
-          'assets/images/logo_pae.png',
-          height: size.height * 0.14,
-        ),
         Container(
           alignment: Alignment.center,
           padding: EdgeInsets.only(top: kDefaultPadding),

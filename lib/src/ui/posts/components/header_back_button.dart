@@ -8,14 +8,14 @@ class HeaderBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: kDefaultPadding),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Icon(
-          Icons.arrow_back_ios,
-          color: kTextColor,
-          size: 26.0,
+      child: CircleAvatar(
+        backgroundColor: kPrimaryColor,
+        radius: 25.0,
+        child: IconButton(
+          color: Colors.white,
+          alignment: Alignment.centerRight,
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {Navigator.pop(context);},
         ),
       ),
     );

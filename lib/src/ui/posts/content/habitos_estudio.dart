@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:manwe/src/ui/posts/components/header_back_button.dart';
 import 'package:manwe/src/ui/posts/components/header_info_button.dart';
 import 'package:manwe/src/ui/posts/components/post_categories.dart';
@@ -10,18 +11,21 @@ class HabitosEstudio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent
+    ));
     return Container(
       color: kBackgroundColor,
       child: SafeArea(
+        top: false,
         child: Scaffold(
+          extendBodyBehindAppBar: true,
           body: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(top: kDefaultPadding * 2),
+            child: Container(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  HeaderButtons(),
-                  ServiceHeaderPAE(),
+                  PostHeader(),
                   PostCategories(
                     categories: [
                       'Apoyo Académico',
@@ -142,6 +146,49 @@ class HabitosEstudio extends StatelessWidget {
   }
 }
 
+class PostHeader extends StatelessWidget {
+  const PostHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+    return Column(
+      children: [
+        Stack(
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const DetailScreen();
+                }));
+              },
+              child: Container(
+                height: 270.0,
+                width: size.width,
+                child: Image.network(
+                  "http://10.0.2.2:1337/uploads/small_publicacion_1_f93522d5fc.jpg?15160.30000000028",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Container(
+              height: statusBarHeight,
+              width: size.width,
+              color: kPrimaryColor,
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: kDefaultPadding * 4),
+                child: HeaderButtons()
+            ),
+          ],
+        ),
+        ServiceHeaderPAE(),
+      ],
+    );
+  }
+}
+
 class HeaderButtons extends StatelessWidget {
   const HeaderButtons();
 
@@ -155,6 +202,26 @@ class HeaderButtons extends StatelessWidget {
           serviceDetailsRoute: 'service-details-pae',
         ),
       ],
+    );
+  }
+}
+
+class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Center(
+          child: Image.network(
+            "http://10.0.2.2:1337/uploads/small_publicacion_1_f93522d5fc.jpg?15160.30000000028",
+          ),
+        ),
+      ),
     );
   }
 }
