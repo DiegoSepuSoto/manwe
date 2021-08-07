@@ -23,7 +23,7 @@ class AlimentosAcidos extends StatelessWidget {
                   HeaderButtons(),
                   ServiceHeaderSESAES(),
                   PostCategories(
-                    categories: ['Salud física', 'Salud dental', 'Alimentación'],
+                    categories: [],
                   ),
                   Container(
                     alignment: Alignment.center,

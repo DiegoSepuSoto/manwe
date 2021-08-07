@@ -23,11 +23,7 @@ class QuienSoy extends StatelessWidget {
                   HeaderButtons(),
                   ServiceHeaderPAE(),
                   PostCategories(
-                    categories: [
-                      'Autodescubrimiento',
-                      'Autoestima',
-                      'Motivación'
-                    ],
+                    categories: [],
                   ),
                   Container(
                     alignment: Alignment.center,

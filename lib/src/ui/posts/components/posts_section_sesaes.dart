@@ -53,7 +53,7 @@ class PostsSectionSESAES extends StatelessWidget {
                     image: 'assets/images/publications/publicacion_5.jpg',
                     overview:
                         '¿Sabias que los alimentos acidos pueden dañar tus dientes?.',
-                    detailRoute: 'alimentos-acidos',
+                    postID: '1',
                   ),
                 ],
               ),

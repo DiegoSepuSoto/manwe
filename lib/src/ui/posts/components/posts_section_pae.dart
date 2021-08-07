@@ -54,14 +54,14 @@ class PostsSectionPAE extends StatelessWidget {
                     image: 'assets/images/publications/publicacion_1.jpg',
                     overview:
                         'Para terminar la semana y empezar con un buen descansar te dejamos algunos tips de hábitos de estudio',
-                    detailRoute: 'habitos-estudio',
+                    postID: '1',
                   ),
                   PostCard(
                     title: '¿Quién Soy?',
                     image: 'assets/images/publications/publicacion_4.jpg',
                     overview:
                         'Al plantearnos la pregunta: ¿Quién soy yo? seguramente, una de las primeras cosas que viene a nuestra cabeza',
-                    detailRoute: 'quien-soy',
+                    postID: '1',
                   ),
                 ],
               ),

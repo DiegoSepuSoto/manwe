@@ -12,7 +12,7 @@ class HabitosEstudio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent
+        statusBarColor: kPrimaryColor
     ));
     return Container(
       color: kBackgroundColor,
@@ -27,12 +27,7 @@ class HabitosEstudio extends StatelessWidget {
                 children: [
                   PostHeader(),
                   PostCategories(
-                    categories: [
-                      'Apoyo Académico',
-                      'Hábitos',
-                      'Primeros Años',
-                      'Ramos difíciles'
-                    ],
+                    categories: [],
                   ),
                   Container(
                     alignment: Alignment.center,
@@ -152,7 +147,6 @@ class PostHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final statusBarHeight = MediaQuery.of(context).padding.top;
     return Column(
       children: [
         Stack(
@@ -172,13 +166,8 @@ class PostHeader extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: statusBarHeight,
-              width: size.width,
-              color: kPrimaryColor,
-            ),
             Padding(
-              padding: EdgeInsets.only(top: kDefaultPadding * 4),
+              padding: EdgeInsets.only(top: kDefaultPadding * 3),
                 child: HeaderButtons()
             ),
           ],

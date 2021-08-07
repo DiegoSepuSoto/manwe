@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:manwe/src/domain/models/post_page.dart';
 import 'package:manwe/src/ui/posts/components/post_category.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
 class PostCategories extends StatelessWidget {
-  final List<String> categories;
+  final List<Category> categories;
 
   const PostCategories({required this.categories});
 
@@ -18,7 +19,7 @@ class PostCategories extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext ctx, int index) {
           return PostCategory(
-            category: categories[index],
+            category: categories[index].name,
           );
         },
       )

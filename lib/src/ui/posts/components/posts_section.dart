@@ -62,7 +62,7 @@ class PostsSection extends StatelessWidget {
                       title: postsForPreview[index].title,
                       image: postsForPreview[index].imageUrl,
                       overview: postsForPreview[index].summary,
-                      detailRoute: 'habitos-estudio',
+                      postID: postsForPreview[index].id,
                     );
                   }),
             ),

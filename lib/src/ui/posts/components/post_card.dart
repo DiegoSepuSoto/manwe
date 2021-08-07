@@ -5,10 +5,13 @@ class PostCard extends StatelessWidget {
   final String image;
   final String title;
   final String overview;
-  final String detailRoute;
+  final String postID;
 
   const PostCard(
-      {required this.image, required this.title, required this.overview, required this.detailRoute});
+      {required this.image,
+      required this.title,
+      required this.overview,
+      required this.postID});
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +39,14 @@ class PostCard extends StatelessWidget {
             height: size.height * 0.2,
             child: Container(
               child: ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10.0),
-                  topRight: Radius.circular(10.0),
-                ),
-                child: Image.network(
-                  image.replaceAll("localhost", "10.0.2.2"),
-                  fit: BoxFit.cover,
-                )
-              ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.0),
+                    topRight: Radius.circular(10.0),
+                  ),
+                  child: Image.network(
+                    image.replaceAll("localhost", "10.0.2.2"),
+                    fit: BoxFit.cover,
+                  )),
             ),
           ),
           Container(
@@ -85,11 +87,10 @@ class PostCard extends StatelessWidget {
                   Spacer(),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, detailRoute);
+                      Navigator.pushNamed(context, 'post-page',
+                          arguments: postID);
                     },
-                    style: ElevatedButton.styleFrom(
-                      primary: kPrimaryColor
-                    ),
+                    style: ElevatedButton.styleFrom(primary: kPrimaryColor),
                     child: Text('Ver más'),
                   )
                 ],
