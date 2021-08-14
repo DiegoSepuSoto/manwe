@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/home_page_repository.dart';
 import 'package:manwe/src/domain/blocs/home/home_cubit.dart';
 import 'package:manwe/src/ui/posts/components/posts_section.dart';
+import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 
 class PostsScreen extends StatelessWidget {
   const PostsScreen();
@@ -16,14 +17,8 @@ class PostsScreen extends StatelessWidget {
         ..homePageStarted(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
-          if (state is HomeInitial) {
-            return Center(
-              child: Text("HomeInitial"),
-            );
-          } else if (state is HomeLoading) {
-            return Center(
-              child: Text("Cargando"),
-            );
+          if (state is HomeLoading) {
+            return LoadingCube();
           } else if (state is HomeSuccessLoad) {
             final servicesWithPosts = state.homePage.servicesWithPosts;
             return ListView.builder(
@@ -43,7 +38,7 @@ class PostsScreen extends StatelessWidget {
               child: Text("Falló"),
             );
           } else {
-          return Container();
+            return Container();
           }
         },
       ),

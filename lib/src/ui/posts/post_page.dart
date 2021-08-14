@@ -6,6 +6,7 @@ import 'package:manwe/src/domain/blocs/post/post_cubit.dart';
 import 'package:manwe/src/ui/posts/components/header_back_button.dart';
 import 'package:manwe/src/ui/posts/components/header_info_button.dart';
 import 'package:manwe/src/ui/posts/components/post_categories.dart';
+import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
@@ -24,21 +25,19 @@ class PostPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => PostCubit(postPageRepository: postPageRepository)
         ..postPageStarted(postID),
-      child: BlocBuilder<PostCubit, PostState>(
-        builder: (context, state) {
-          if (state is PostInitial) {
-            return Container();
-          } else if (state is PostLoading) {
-            return Container();
-          } else if (state is PostSuccessLoad) {
-            final postPage = state.postPage;
-            return Container(
-              color: kBackgroundColor,
-              child: SafeArea(
-                top: false,
-                child: Scaffold(
-                  extendBodyBehindAppBar: true,
-                  body: SingleChildScrollView(
+      child: Container(
+        color: kBackgroundColor,
+        child: SafeArea(
+          top: false,
+          child: Scaffold(
+            extendBodyBehindAppBar: true,
+            body: BlocBuilder<PostCubit, PostState>(
+              builder: (context, state) {
+                if (state is PostLoading) {
+                  return LoadingCube();
+                } else if (state is PostSuccessLoad) {
+                  final postPage = state.postPage;
+                  return SingleChildScrollView(
                     child: Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,14 +82,14 @@ class PostPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                  ),
-                ),
-              ),
-            );
-          } else {
-            return Container();
-          }
-        },
+                  );
+                } else {
+                  return Container();
+                }
+              },
+            ),
+          ),
+        ),
       ),
     );
   }
