@@ -6,6 +6,7 @@ import 'package:manwe/src/domain/blocs/post/post_cubit.dart';
 import 'package:manwe/src/ui/posts/components/header_back_button.dart';
 import 'package:manwe/src/ui/posts/components/header_info_button.dart';
 import 'package:manwe/src/ui/posts/components/post_categories.dart';
+import 'package:manwe/src/ui/shared/components/error_page.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -84,7 +85,7 @@ class PostPage extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return Container();
+                  return ErrorPage();
                 }
               },
             ),

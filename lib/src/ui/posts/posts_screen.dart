@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/home_page_repository.dart';
 import 'package:manwe/src/domain/blocs/home/home_cubit.dart';
 import 'package:manwe/src/ui/posts/components/posts_section.dart';
+import 'package:manwe/src/ui/shared/components/error_page.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 
 class PostsScreen extends StatelessWidget {
@@ -33,12 +34,8 @@ class PostsScreen extends StatelessWidget {
                 );
               },
             );
-          } else if (state is HomeFailedLoad) {
-            return Center(
-              child: Text("Falló"),
-            );
           } else {
-            return Container();
+            return ErrorPage();
           }
         },
       ),
