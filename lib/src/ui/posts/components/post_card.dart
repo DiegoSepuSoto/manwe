@@ -44,7 +44,7 @@ class PostCard extends StatelessWidget {
                     topRight: Radius.circular(10.0),
                   ),
                   child: Image.network(
-                    image.replaceAll("localhost", "10.0.2.2"),
+                    image,
                     fit: BoxFit.cover,
                   )),
             ),

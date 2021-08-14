@@ -4,23 +4,26 @@ import 'package:manwe/src/data/repositories/home_page_repository.dart';
 import 'package:manwe/src/domain/blocs/home/home_cubit.dart';
 import 'package:manwe/src/ui/posts/components/posts_section.dart';
 
-import 'components/posts_section_pae.dart';
-import 'components/posts_section_sesaes.dart';
-
 class PostsScreen extends StatelessWidget {
   const PostsScreen();
 
   @override
   Widget build(BuildContext context) {
+    final homePageRepository = new HomePageRepository();
+
     return BlocProvider(
-      create: (context) => HomeCubit(homePageRepository: HomePageRepository())
+      create: (context) => HomeCubit(homePageRepository: homePageRepository)
         ..homePageStarted(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           if (state is HomeInitial) {
-            return Container();
+            return Center(
+              child: Text("HomeInitial"),
+            );
           } else if (state is HomeLoading) {
-            return Container();
+            return Center(
+              child: Text("Cargando"),
+            );
           } else if (state is HomeSuccessLoad) {
             final servicesWithPosts = state.homePage.servicesWithPosts;
             return ListView.builder(
@@ -35,14 +38,12 @@ class PostsScreen extends StatelessWidget {
                 );
               },
             );
-          } else {
-            return SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [PostsSectionPAE(), PostsSectionSESAES()],
-              ),
+          } else if (state is HomeFailedLoad) {
+            return Center(
+              child: Text("Falló"),
             );
+          } else {
+          return Container();
           }
         },
       ),

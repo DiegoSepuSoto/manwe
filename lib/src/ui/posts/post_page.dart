@@ -14,13 +14,15 @@ class PostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final postID = ModalRoute.of(context)!.settings.arguments as String;
+
+    final postPageRepository = new PostPageRepository();
+
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: kPrimaryColor));
 
-    final postID = ModalRoute.of(context)!.settings.arguments as String;
-
     return BlocProvider(
-      create: (context) => PostCubit(postPageRepository: PostPageRepository())
+      create: (context) => PostCubit(postPageRepository: postPageRepository)
         ..postPageStarted(postID),
       child: BlocBuilder<PostCubit, PostState>(
         builder: (context, state) {
@@ -125,7 +127,7 @@ class PostHeader extends StatelessWidget {
                 height: 270.0,
                 width: size.width,
                 child: Image.network(
-                  postImage.replaceAll("localhost", "10.0.2.2"),
+                  postImage,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -204,7 +206,7 @@ class FullSizeImage extends StatelessWidget {
         },
         child: Center(
           child: Image.network(
-            postImage.replaceAll("localhost", "10.0.2.2"),
+            postImage,
           ),
         ),
       ),
