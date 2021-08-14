@@ -12,7 +12,6 @@ class PostPageRepository implements AbstractPostPageRepository {
         url,
       );
       final postPage = PostPage.fromJson(response.data);
-      print(postPage.categories[0].name);
       return postPage;
     } catch (e) {
       throw Exception('Error loading post page');

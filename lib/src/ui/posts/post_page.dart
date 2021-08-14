@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/post_page_repository.dart';
 import 'package:manwe/src/domain/blocs/post/post_cubit.dart';
-import 'package:manwe/src/ui/posts/components/header_back_button.dart';
-import 'package:manwe/src/ui/posts/components/header_info_button.dart';
+import 'package:manwe/src/ui/posts/components/header_buttons.dart';
 import 'package:manwe/src/ui/posts/components/post_categories.dart';
 import 'package:manwe/src/ui/shared/components/error_page.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
@@ -144,23 +143,6 @@ class PostHeader extends StatelessWidget {
           ],
         ),
         ServiceHeader(serviceName: serviceName),
-      ],
-    );
-  }
-}
-
-class HeaderButtons extends StatelessWidget {
-  const HeaderButtons();
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        HeaderBackButton(),
-        Spacer(),
-        HeaderInfoButton(
-          serviceDetailsRoute: 'service-details-pae',
-        ),
       ],
     );
   }
