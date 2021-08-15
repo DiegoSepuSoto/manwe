@@ -9,6 +9,7 @@ import 'package:manwe/src/ui/shared/components/error_page.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:manwe/src/ui/utils/functions.dart';
 
 class PostPage extends StatelessWidget {
   const PostPage();
@@ -44,6 +45,7 @@ class PostPage extends StatelessWidget {
                         children: [
                           PostHeader(
                             postImage: postPage.image,
+                            serviceID: postPage.serviceId,
                             serviceName: postPage.serviceName,
                           ),
                           PostCategories(
@@ -65,15 +67,7 @@ class PostPage extends StatelessWidget {
                             padding: EdgeInsets.all(kDefaultPadding),
                             child: MarkdownBody(
                               data: postPage.body,
-                              styleSheet: MarkdownStyleSheet(
-                                h1: TextStyle(
-                                  fontSize: 22.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                p: TextStyle(
-                                  fontSize: 17.0,
-                                ),
-                              ),
+                              styleSheet: buildPageMarkdownBody(),
                             ),
                           ),
                           SizedBox(
@@ -97,9 +91,10 @@ class PostPage extends StatelessWidget {
 
 class PostHeader extends StatelessWidget {
   final String postImage;
+  final String serviceID;
   final String serviceName;
 
-  const PostHeader({required this.postImage, required this.serviceName});
+  const PostHeader({required this.postImage, required this.serviceName, required this.serviceID});
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +133,9 @@ class PostHeader extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(top: kDefaultPadding * 3),
-              child: HeaderButtons(),
+              child: HeaderButtons(
+                serviceID: serviceID,
+              ),
             ),
           ],
         ),

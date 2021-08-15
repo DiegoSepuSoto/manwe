@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
 class HeaderButtons extends StatelessWidget {
-  const HeaderButtons();
+  final String serviceID;
+
+  const HeaderButtons({required this.serviceID});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class HeaderButtons extends StatelessWidget {
         HeaderBackButton(),
         Spacer(),
         HeaderInfoButton(
-          serviceDetailsRoute: 'service-details-pae',
+          serviceID: serviceID,
         ),
       ],
     );
@@ -32,7 +34,9 @@ class HeaderBackButton extends StatelessWidget {
           color: Colors.white,
           alignment: Alignment.centerRight,
           icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {Navigator.pop(context);},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
     );
@@ -40,9 +44,9 @@ class HeaderBackButton extends StatelessWidget {
 }
 
 class HeaderInfoButton extends StatelessWidget {
-  final String serviceDetailsRoute;
+  final String serviceID;
 
-  const HeaderInfoButton({required this.serviceDetailsRoute});
+  const HeaderInfoButton({required this.serviceID});
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +58,9 @@ class HeaderInfoButton extends StatelessWidget {
         child: IconButton(
           color: Colors.white,
           alignment: Alignment.center,
-          icon:  Icon(Icons.info),
-          onPressed: () => Navigator.pushNamed(context, serviceDetailsRoute),
+          icon: Icon(Icons.info),
+          onPressed: () => Navigator.pushNamed(context, 'service-page',
+              arguments: serviceID),
         ),
       ),
     );

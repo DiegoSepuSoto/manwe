@@ -87,8 +87,11 @@ class PostCard extends StatelessWidget {
                   Spacer(),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, 'post-page',
-                          arguments: postID);
+                      Navigator.pushNamed(
+                        context,
+                        'post-page',
+                        arguments: postID,
+                      );
                     },
                     style: ElevatedButton.styleFrom(primary: kPrimaryColor),
                     child: Text('Ver más'),

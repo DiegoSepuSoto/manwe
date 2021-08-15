@@ -7,7 +7,7 @@ class ServicePageRepository implements AbstractServicePageRepository {
 
   Future<ServicePage> getServicePage(String id) async {
     try {
-      final url = "${dotenv.env['ELENTARI_HOST']}/v1/post/" + id;
+      final url = "${dotenv.env['ELENTARI_HOST']}/v1/service/" + id;
       final response = await Dio().get(
         url,
       );
