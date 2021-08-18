@@ -6,6 +6,7 @@ import 'package:manwe/src/domain/blocs/post/post_cubit.dart';
 import 'package:manwe/src/ui/posts/components/header_buttons.dart';
 import 'package:manwe/src/ui/posts/components/post_categories.dart';
 import 'package:manwe/src/ui/shared/components/error_page.dart';
+import 'package:manwe/src/ui/shared/components/full_size_image.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -111,7 +112,7 @@ class PostHeader extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) {
                       return FullSizeImage(
-                        postImage: postImage,
+                        image: postImage,
                       );
                     },
                   ),
@@ -167,28 +168,6 @@ class ServiceHeader extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class FullSizeImage extends StatelessWidget {
-  final String postImage;
-
-  const FullSizeImage({required this.postImage});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Center(
-          child: Image.network(
-            postImage,
-          ),
-        ),
-      ),
     );
   }
 }

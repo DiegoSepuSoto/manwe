@@ -5,6 +5,8 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:manwe/src/data/repositories/service_page_repository.dart';
 import 'package:manwe/src/domain/blocs/service/service_cubit.dart';
 import 'package:manwe/src/ui/shared/components/error_page.dart';
+import 'package:manwe/src/ui/shared/components/full_size_image.dart';
+import 'package:manwe/src/ui/shared/components/header_back_button.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:manwe/src/ui/utils/functions.dart';
@@ -41,7 +43,9 @@ class ServicePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        ServiceHeader(serviceLogoURL: servicePage.logoUrl,),
+                        ServiceHeader(
+                          serviceLogoURL: servicePage.logoUrl,
+                        ),
                         Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(top: kDefaultPadding),
@@ -90,25 +94,30 @@ class ServiceHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          padding: EdgeInsets.only(left: kDefaultPadding),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: kTextColor,
-              size: 26.0,
-            ),
-          ),
-        ),
+        HeaderBackButton(),
         Container(
           alignment: Alignment.center,
-          child: Image.network(
-            serviceLogoURL,
-            width: 200.0,
-            height: 170.0,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return FullSizeImage(
+                      image: serviceLogoURL,
+                    );
+                  },
+                ),
+              );
+            },
+            child: CircleAvatar(
+              radius: 75.0,
+              backgroundColor: kPrimaryColor,
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(serviceLogoURL),
+                radius: 70.0,
+              ),
+            ),
           ),
         )
       ],
