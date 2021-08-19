@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:manwe/src/data/repositories/post_page_repository.dart';
 import 'package:manwe/src/domain/blocs/post/post_cubit.dart';
 import 'package:manwe/src/ui/posts/components/header_buttons.dart';
@@ -69,6 +71,11 @@ class PostPage extends StatelessWidget {
                             child: MarkdownBody(
                               data: postPage.body,
                               styleSheet: buildPageMarkdownBody(),
+                              imageBuilder: (uri, title, alt) {
+                                return Image.network(
+                                  "${dotenv.env['ILUVATAR_CMS_HOST']}$uri",
+                                );
+                              },
                             ),
                           ),
                           SizedBox(
@@ -95,7 +102,10 @@ class PostHeader extends StatelessWidget {
   final String serviceID;
   final String serviceName;
 
-  const PostHeader({required this.postImage, required this.serviceName, required this.serviceID});
+  const PostHeader(
+      {required this.postImage,
+      required this.serviceName,
+      required this.serviceID});
 
   @override
   Widget build(BuildContext context) {
