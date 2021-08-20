@@ -94,7 +94,10 @@ class PostCard extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(primary: kPrimaryColor),
-                    child: Text('Ver más'),
+                    child: Text(
+                      'Ver más',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   )
                 ],
               ),

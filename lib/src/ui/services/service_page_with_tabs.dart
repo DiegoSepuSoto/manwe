@@ -62,8 +62,12 @@ class ServicePageWithTabs extends StatelessWidget {
                         logoURL: servicePage.logoUrl,
                         description: servicePage.description,
                       ),
-                      ProfesionalsTab(profesionals: servicePage.persons,),
-                      ContactTab(),
+                      ProfesionalsTab(
+                        profesionals: servicePage.persons,
+                      ),
+                      ContactTab(
+                        contacts: servicePage.contacts,
+                      ),
                     ],
                   ),
                 ),
