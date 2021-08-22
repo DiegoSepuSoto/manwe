@@ -31,6 +31,7 @@ class ServiceHeader extends StatelessWidget {
               radius: 75.0,
               backgroundColor: kPrimaryColor,
               child: CircleAvatar(
+                backgroundColor: kPrimaryColor,
                 backgroundImage: NetworkImage(serviceLogoURL),
                 radius: 70.0,
               ),

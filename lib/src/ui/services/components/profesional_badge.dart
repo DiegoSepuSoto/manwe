@@ -23,6 +23,7 @@ class ProfesionalBadge extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: kDefaultPadding),
             child: CircleAvatar(
+              backgroundColor: kPrimaryColor,
               radius: 30.0,
             ),
           ),
