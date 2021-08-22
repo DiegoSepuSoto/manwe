@@ -48,7 +48,7 @@ class PostsSection extends StatelessWidget {
             ),
           ),
           Container(
-            height: size.height > 750 ? size.height * 0.48 : size.height * 0.49,
+            height: size.height > 600 ? size.height * 0.475 : size.height * 0.6,
             child: Padding(
               padding: EdgeInsets.only(
                 left: kDefaultPadding,

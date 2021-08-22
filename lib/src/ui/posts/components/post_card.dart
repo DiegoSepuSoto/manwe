@@ -18,7 +18,7 @@ class PostCard extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      padding: EdgeInsets.only(bottom: 4.0),
+      padding: EdgeInsets.only(bottom: 2.0),
       margin: EdgeInsets.only(right: kDefaultPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
@@ -36,17 +36,18 @@ class PostCard extends StatelessWidget {
         children: [
           Container(
             width: size.width * 0.65,
-            height: size.height * 0.2,
+            height: size.height * 0.19,
             child: Container(
               child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10.0),
-                    topRight: Radius.circular(10.0),
-                  ),
-                  child: Image.network(
-                    image,
-                    fit: BoxFit.cover,
-                  )),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10.0),
+                  topRight: Radius.circular(10.0),
+                ),
+                child: Image.network(
+                  image,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           Container(
@@ -58,7 +59,7 @@ class PostCard extends StatelessWidget {
               ),
             ),
             width: size.width * 0.65,
-            height: size.height * 0.25,
+            height: size.height > 600 ? size.height * 0.25 : size.height * 0.365,
             child: Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
