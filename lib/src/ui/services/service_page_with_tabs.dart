@@ -41,7 +41,8 @@ class ServicePageWithTabs extends StatelessWidget {
                 length: 3,
                 child: Scaffold(
                   appBar: AppBar(
-                    bottom: const TabBar(
+                    bottom: TabBar(
+                      indicatorColor: Colors.white,
                       tabs: [
                         Tab(
                           text: "Descripción",
