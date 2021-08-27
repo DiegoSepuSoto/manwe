@@ -19,8 +19,12 @@ class ServicePageWithTabs extends StatelessWidget {
 
     final servicePageRepository = new ServicePageRepository();
 
-    SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: kPrimaryColor));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: kPrimaryColor,
+      systemNavigationBarColor: Colors.white,
+      statusBarIconBrightness: Brightness.light,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
 
     return BlocProvider(
       create: (context) =>
@@ -41,6 +45,8 @@ class ServicePageWithTabs extends StatelessWidget {
                 length: 3,
                 child: Scaffold(
                   appBar: AppBar(
+                    backgroundColor: kPrimaryColor,
+                    brightness: Brightness.dark,
                     bottom: TabBar(
                       indicatorColor: Colors.white,
                       tabs: [
