@@ -14,7 +14,7 @@ class ServiceCards extends StatelessWidget {
 
     return Container(
       width: size.width,
-      height: size.height * 0.29,
+      height: size.height * 0.17,
       margin: EdgeInsets.only(
         top: kDefaultPadding,
         left: kDefaultPadding,

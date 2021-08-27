@@ -13,9 +13,23 @@ class SearchTextField extends StatelessWidget {
         right: kDefaultPadding,
       ),
       child: TextField(
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 17.0
+        ),
+        cursorColor: kPrimaryColor,
         decoration: InputDecoration(
-          border: OutlineInputBorder(),
+          prefixIcon: Icon(Icons.search, color: kPrimaryColor,),
           labelText: 'Buscar',
+          border: OutlineInputBorder(),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: kPrimaryColor),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: kPrimaryColor),
+          ),
+          helperText: 'Busca el contenido que desees en las publicaciones',
+          floatingLabelBehavior: FloatingLabelBehavior.never,
         ),
       ),
     );

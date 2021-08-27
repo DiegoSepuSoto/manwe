@@ -13,17 +13,14 @@ class CategoryList extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.3,
+      height: size.height * 0.35,
       margin: EdgeInsets.only(
         top: kDefaultPadding,
         left: kDefaultPadding,
         right: kDefaultPadding,
       ),
-      padding: EdgeInsets.only(
-        top: 10.0,
-      ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
             color: kTextColor.withOpacity(0.5),

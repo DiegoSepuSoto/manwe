@@ -10,6 +10,8 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
+        top: 10.0,
+        bottom: 10.0,
         left: kDefaultPadding,
       ),
       child: Text(

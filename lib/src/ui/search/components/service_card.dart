@@ -15,7 +15,7 @@ class ServiceCard extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.only(right: kDefaultPadding),
-      height: size.height * 0.29,
+      height: size.height * 0.17,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
@@ -32,7 +32,7 @@ class ServiceCard extends StatelessWidget {
         children: [
           Container(
             width: size.width * 0.65,
-            height: size.height * 0.20,
+            height: size.height * 0.10,
             child: Container(
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
@@ -55,24 +55,22 @@ class ServiceCard extends StatelessWidget {
               ),
             ),
             width: size.width * 0.65,
-            height: size.height * 0.08,
+            height: size.height * 0.06,
             child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Text(
-                      name,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: kDefaultPadding
+              ),
+              child: Container(
+                child: Text(
+                  name,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 17.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                ],
+                ),
               ),
             ),
           ),
