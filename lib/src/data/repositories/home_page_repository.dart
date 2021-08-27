@@ -15,7 +15,6 @@ class HomePageRepository implements AbstractHomePageRepository {
       final homePage = HomePage.fromJson(response.data);
       return homePage;
     } catch (e) {
-      print(e);
       throw Exception('Error loading home page');
     }
   }

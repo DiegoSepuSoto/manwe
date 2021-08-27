@@ -55,16 +55,17 @@ class PostsSection extends StatelessWidget {
                 top: kDefaultPadding,
               ),
               child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: postsForPreview.length,
-                  itemBuilder: (context, index) {
-                    return PostCard(
-                      title: postsForPreview[index].title,
-                      image: postsForPreview[index].imageUrl,
-                      overview: postsForPreview[index].summary,
-                      postID: postsForPreview[index].id,
-                    );
-                  }),
+                scrollDirection: Axis.horizontal,
+                itemCount: postsForPreview.length,
+                itemBuilder: (context, index) {
+                  return PostCard(
+                    title: postsForPreview[index].title,
+                    image: postsForPreview[index].imageUrl,
+                    overview: postsForPreview[index].summary,
+                    postID: postsForPreview[index].id,
+                  );
+                },
+              ),
             ),
           )
         ],
