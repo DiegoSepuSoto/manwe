@@ -30,7 +30,6 @@ class SearchScreen extends StatelessWidget {
             return SingleChildScrollView(
               child: Column(
                 children: [
-                  SearchTextField(),
                   ServiceCards(
                     services: searchPage.services
                   ),
