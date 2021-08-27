@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/domain/models/service_page.dart';
 import 'package:manwe/src/ui/services/components/service_header.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';

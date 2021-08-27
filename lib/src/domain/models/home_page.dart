@@ -1,9 +1,3 @@
-// To parse this JSON data, do
-//
-//     final homePage = homePageFromJson(jsonString);
-
-import 'dart:convert';
-
 class HomePage {
   HomePage({
     required this.servicesWithPosts,
