@@ -21,7 +21,9 @@ class SearchScreen extends StatelessWidget {
       child: BlocBuilder<SearchPageCubit, SearchPageState>(
         builder: (context, state) {
           if (state is SearchPageLoading) {
-            return LoadingCube();
+            return Scaffold(
+              body: LoadingCube(),
+            );
           } else if (state is SearchPageSuccessLoad) {
             final searchPage = state.searchPage;
 
@@ -38,7 +40,9 @@ class SearchScreen extends StatelessWidget {
               ),
             );
           } else {
-            return ErrorPage();
+            return Scaffold(
+              body: ErrorPage(),
+            );
           }
         },
       ),

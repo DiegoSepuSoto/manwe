@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manwe/src/domain/models/service_page.dart';
-import 'package:manwe/src/ui/services/components/profesional_badge.dart';
+import 'package:manwe/src/ui/services/components/profesional_list_item.dart';
 
 class ProfesionalsTab extends StatelessWidget {
   final List<Person> profesionals;
@@ -11,7 +11,7 @@ class ProfesionalsTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       itemBuilder: (context, index) {
-        return ProfesionalBadge(
+        return ProfesionaListItem(
           name: profesionals[index].name,
           charge: profesionals[index].charge,
           email: profesionals[index].email,

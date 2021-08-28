@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:manwe/src/data/repositories/service_page_repository.dart';
-import 'package:manwe/src/domain/blocs/service/service_cubit.dart';
+import 'package:manwe/src/data/repositories/service_repository.dart';
+import 'package:manwe/src/domain/blocs/service/service_page_cubit.dart';
 import 'package:manwe/src/ui/services/tabs/contact_tab.dart';
 import 'package:manwe/src/ui/services/tabs/description_tab.dart';
 import 'package:manwe/src/ui/services/tabs/profesionals_tab.dart';
@@ -17,7 +17,7 @@ class ServicePageWithTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     final serviceID = ModalRoute.of(context)!.settings.arguments as String;
 
-    final servicePageRepository = new ServicePageRepository();
+    final serviceRepository = new ServiceRepository();
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: kPrimaryColor,
@@ -28,18 +28,18 @@ class ServicePageWithTabs extends StatelessWidget {
 
     return BlocProvider(
       create: (context) =>
-          ServiceCubit(servicePageRepository: servicePageRepository)
+          ServiceCubit(servicePageRepository: serviceRepository)
             ..servicePageStarted(serviceID),
       child: Container(
         color: kBackgroundColor,
         child: SafeArea(
-          child: BlocBuilder<ServiceCubit, ServiceState>(
+          child: BlocBuilder<ServiceCubit, ServicePageState>(
               builder: (context, state) {
-            if (state is ServiceLoading) {
+            if (state is ServicePageLoading) {
               return Scaffold(
                 body: LoadingCube(),
               );
-            } else if (state is ServiceSuccessLoad) {
+            } else if (state is ServicePageSuccessLoad) {
               final servicePage = state.servicePage;
               return DefaultTabController(
                 length: 3,

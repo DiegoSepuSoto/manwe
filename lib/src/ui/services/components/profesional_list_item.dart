@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
-class ProfesionalBadge extends StatelessWidget {
+class ProfesionaListItem extends StatelessWidget {
   final String name;
   final String charge;
   final String email;
   final String profilePictureURL;
 
-  const ProfesionalBadge({
+  const ProfesionaListItem({
     required this.name,
     required this.charge,
     required this.email,

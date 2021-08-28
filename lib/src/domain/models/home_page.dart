@@ -6,8 +6,10 @@ class HomePage {
   List<ServicesWithPost> servicesWithPosts;
 
   factory HomePage.fromJson(Map<String, dynamic> json) => HomePage(
-    servicesWithPosts: List<ServicesWithPost>.from(json["services_with_posts"].map((x) => ServicesWithPost.fromJson(x))),
-  );
+        servicesWithPosts: List<ServicesWithPost>.from(
+            json["services_with_posts"]
+                .map((x) => ServicesWithPost.fromJson(x))),
+      );
 }
 
 class ServicesWithPost {
@@ -21,11 +23,13 @@ class ServicesWithPost {
   String abbreviation;
   List<PostForPreview> postsForPreview;
 
-  factory ServicesWithPost.fromJson(Map<String, dynamic> json) => ServicesWithPost(
-    id: json["id"],
-    abbreviation: json["abbreviation"],
-    postsForPreview: List<PostForPreview>.from(json["posts_for_preview"].map((x) => PostForPreview.fromJson(x))),
-  );
+  factory ServicesWithPost.fromJson(Map<String, dynamic> json) =>
+      ServicesWithPost(
+        id: json["id"],
+        abbreviation: json["abbreviation"],
+        postsForPreview: List<PostForPreview>.from(
+            json["posts_for_preview"].map((x) => PostForPreview.fromJson(x))),
+      );
 }
 
 class PostForPreview {
@@ -42,9 +46,9 @@ class PostForPreview {
   String imageUrl;
 
   factory PostForPreview.fromJson(Map<String, dynamic> json) => PostForPreview(
-    id: json["id"],
-    title: json["title"],
-    summary: json["summary"],
-    imageUrl: json["image_url"],
-  );
+        id: json["id"],
+        title: json["title"],
+        summary: json["summary"],
+        imageUrl: json["image_url"],
+      );
 }
