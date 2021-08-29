@@ -18,6 +18,9 @@ class ManweApp extends StatelessWidget {
               bodyColor: kTextColor,
               fontFamily: 'Nunito',
             ),
+        appBarTheme: Theme.of(context).appBarTheme.copyWith(
+              brightness: Brightness.dark,
+            ),
       ),
       routes: Routes.getRoutes(),
       home: Navigation(),

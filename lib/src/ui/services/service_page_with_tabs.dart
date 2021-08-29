@@ -33,6 +33,7 @@ class ServicePageWithTabs extends StatelessWidget {
       child: Container(
         color: kBackgroundColor,
         child: SafeArea(
+          top: false,
           child: BlocBuilder<ServiceCubit, ServicePageState>(
               builder: (context, state) {
             if (state is ServicePageLoading) {

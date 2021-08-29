@@ -41,6 +41,18 @@ class PostsByServiceScreen extends StatelessWidget {
                 backgroundColor: kPrimaryColor,
                 brightness: Brightness.dark,
                 title: Text(servicePostsPage.name),
+                actions: [
+                  Padding(
+                    padding: EdgeInsets.only(right: kDefaultPadding),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, 'service-page',
+                            arguments: serviceID);
+                      },
+                      child: Icon(Icons.info),
+                    ),
+                  )
+                ],
               ),
               body: PostList(
                 posts: servicePostsPage.postsForPreview,
