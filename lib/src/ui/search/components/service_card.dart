@@ -47,8 +47,9 @@ class ServiceCard extends StatelessWidget {
                     topLeft: Radius.circular(10.0),
                     topRight: Radius.circular(10.0),
                   ),
-                  child: Image.network(
-                    imageURL,
+                  child: FadeInImage.assetNetwork(
+                    placeholder: 'assets/images/loading.gif',
+                    image: imageURL,
                     fit: BoxFit.cover,
                   ),
                 ),

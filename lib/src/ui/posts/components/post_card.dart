@@ -43,8 +43,9 @@ class PostCard extends StatelessWidget {
                   topLeft: Radius.circular(10.0),
                   topRight: Radius.circular(10.0),
                 ),
-                child: Image.network(
-                  image,
+                child: FadeInImage.assetNetwork(
+                  placeholder: 'assets/images/loading.gif',
+                  image: image,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -59,7 +60,8 @@ class PostCard extends StatelessWidget {
               ),
             ),
             width: size.width * 0.65,
-            height: size.height > 600 ? size.height * 0.25 : size.height * 0.365,
+            height:
+                size.height > 600 ? size.height * 0.25 : size.height * 0.365,
             child: Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
