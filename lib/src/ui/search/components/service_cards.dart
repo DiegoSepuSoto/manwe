@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/domain/models/search_page.dart';
+import 'package:manwe/src/domain/models/search_screen.dart';
 import 'package:manwe/src/ui/search/components/service_card.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 

@@ -26,7 +26,7 @@ class DescriptionTab extends StatelessWidget {
               padding: EdgeInsets.all(kDefaultPadding),
               child: MarkdownBody(
                 data: description,
-                styleSheet: buildPageMarkdownBody(),
+                styleSheet: buildMarkdownBody(),
               ),
             ),
             SizedBox(

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/ui/posts/post_page.dart';
+import 'package:manwe/src/ui/posts/post_screen.dart';
 import 'package:manwe/src/ui/search/posts_by_category_screen.dart';
 import 'package:manwe/src/ui/search/posts_by_service_screen.dart';
-import 'package:manwe/src/ui/services/service_page_with_tabs.dart';
+import 'package:manwe/src/ui/services/service_with_tabs_screen.dart';
 
 class Routes {
   static Map<String, WidgetBuilder> getRoutes() {
     return {
-      'post-page': (BuildContext context) => PostPage(),
-      'service-page': (BuildContext context) => ServicePageWithTabs(),
-      'posts-by-service': (BuildContext context) => PostsByServiceScreen(),
-      'posts-by-category': (BuildContext context) => PostsByCategoryScreen()
+      'post-screen': (BuildContext context) => PostScreen(),
+      'service-screen': (BuildContext context) => ServiceWithTabsScreen(),
+      'posts-by-service-screen': (BuildContext context) => PostsByServiceScreen(),
+      'posts-by-category-screen': (BuildContext context) => PostsByCategoryScreen()
     };
   }
 }

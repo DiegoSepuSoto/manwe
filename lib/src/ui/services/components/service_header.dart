@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/ui/shared/components/full_size_image.dart';
+import 'package:manwe/src/ui/shared/components/full_size_image_screen.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
 class ServiceHeader extends StatelessWidget {
@@ -20,7 +20,7 @@ class ServiceHeader extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return FullSizeImage(
+                    return FullSizeImageScreen(
                       image: serviceLogoURL,
                     );
                   },

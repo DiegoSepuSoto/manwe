@@ -13,7 +13,7 @@ class CategoryItem extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(
           context,
-          'posts-by-category',
+          'posts-by-category-screen',
           arguments: id,
         );
       },

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/service_repository.dart';
-import 'package:manwe/src/domain/blocs/service/service_page_cubit.dart';
+import 'package:manwe/src/domain/blocs/service/service_screen_cubit.dart';
 import 'package:manwe/src/ui/services/tabs/contact_tab.dart';
 import 'package:manwe/src/ui/services/tabs/description_tab.dart';
 import 'package:manwe/src/ui/services/tabs/profesionals_tab.dart';
-import 'package:manwe/src/ui/shared/components/error_page.dart';
+import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
-class ServicePageWithTabs extends StatelessWidget {
-  const ServicePageWithTabs();
+class ServiceWithTabsScreen extends StatelessWidget {
+  const ServiceWithTabsScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -28,20 +28,20 @@ class ServicePageWithTabs extends StatelessWidget {
 
     return BlocProvider(
       create: (context) =>
-          ServiceCubit(servicePageRepository: serviceRepository)
-            ..servicePageStarted(serviceID),
+          ServiceCubit(serviceRepository: serviceRepository)
+            ..serviceScreenStarted(serviceID),
       child: Container(
         color: kBackgroundColor,
         child: SafeArea(
           top: false,
-          child: BlocBuilder<ServiceCubit, ServicePageState>(
+          child: BlocBuilder<ServiceCubit, ServiceScreenState>(
               builder: (context, state) {
-            if (state is ServicePageLoading) {
+            if (state is ServiceScreenLoading) {
               return Scaffold(
                 body: LoadingCube(),
               );
-            } else if (state is ServicePageSuccessLoad) {
-              final servicePage = state.servicePage;
+            } else if (state is ServiceScreenSuccessLoad) {
+              final serviceScreen = state.serviceScreen;
               return DefaultTabController(
                 length: 3,
                 child: Scaffold(
@@ -62,19 +62,19 @@ class ServicePageWithTabs extends StatelessWidget {
                         ),
                       ],
                     ),
-                    title: Text(state.servicePage.name),
+                    title: Text(state.serviceScreen.name),
                   ),
                   body: TabBarView(
                     children: [
                       DescriptionTab(
-                        logoURL: servicePage.logoUrl,
-                        description: servicePage.description,
+                        logoURL: serviceScreen.logoUrl,
+                        description: serviceScreen.description,
                       ),
                       ProfesionalsTab(
-                        profesionals: servicePage.persons,
+                        profesionals: serviceScreen.persons,
                       ),
                       ContactTab(
-                        contacts: servicePage.contacts,
+                        contacts: serviceScreen.contacts,
                       ),
                     ],
                   ),
@@ -82,7 +82,7 @@ class ServicePageWithTabs extends StatelessWidget {
               );
             } else {
               return Scaffold(
-                body: ErrorPage(),
+                body: ErrorScreen(),
               );
             }
           }),

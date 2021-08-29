@@ -3,62 +3,62 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:manwe/src/data/repositories/post_page_repository.dart';
-import 'package:manwe/src/domain/blocs/post/post_cubit.dart';
+import 'package:manwe/src/data/repositories/post_repository.dart';
+import 'package:manwe/src/domain/blocs/post/post_screen_cubit.dart';
 import 'package:manwe/src/ui/posts/components/header_buttons.dart';
 import 'package:manwe/src/ui/posts/components/post_categories.dart';
-import 'package:manwe/src/ui/shared/components/error_page.dart';
-import 'package:manwe/src/ui/shared/components/full_size_image.dart';
+import 'package:manwe/src/ui/shared/components/error_screen.dart';
+import 'package:manwe/src/ui/shared/components/full_size_image_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:manwe/src/ui/utils/functions.dart';
 
-class PostPage extends StatelessWidget {
-  const PostPage();
+class PostScreen extends StatelessWidget {
+  const PostScreen();
 
   @override
   Widget build(BuildContext context) {
     final postID = ModalRoute.of(context)!.settings.arguments as String;
 
-    final postPageRepository = new PostPageRepository();
+    final postScreenRepository = new PostRepository();
 
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: kPrimaryColor));
 
     return BlocProvider(
-      create: (context) => PostCubit(postPageRepository: postPageRepository)
-        ..postPageStarted(postID),
+      create: (context) => PostScreenCubit(postScreenRepository: postScreenRepository)
+        ..postScreenStarted(postID),
       child: Container(
         color: kBackgroundColor,
         child: SafeArea(
           top: false,
           child: Scaffold(
             extendBodyBehindAppBar: true,
-            body: BlocBuilder<PostCubit, PostState>(
+            body: BlocBuilder<PostScreenCubit, PostScreenState>(
               builder: (context, state) {
-                if (state is PostLoading) {
+                if (state is PostScreenLoading) {
                   return LoadingCube();
-                } else if (state is PostSuccessLoad) {
-                  final postPage = state.postPage;
+                } else if (state is PostScreenSuccessLoad) {
+                  final postScreen = state.postScreen;
                   return SingleChildScrollView(
                     child: Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           PostHeader(
-                            postImage: postPage.image,
-                            serviceID: postPage.serviceId,
-                            serviceName: postPage.serviceName,
+                            postImage: postScreen.image,
+                            serviceID: postScreen.serviceId,
+                            serviceName: postScreen.serviceName,
                           ),
                           PostCategories(
-                            categories: postPage.categories,
+                            categories: postScreen.categories,
                           ),
                           Container(
                             alignment: Alignment.center,
                             padding: EdgeInsets.only(top: kDefaultPadding),
                             child: Text(
-                              postPage.title,
+                              postScreen.title,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24.0,
@@ -69,8 +69,8 @@ class PostPage extends StatelessWidget {
                             alignment: Alignment.center,
                             padding: EdgeInsets.all(kDefaultPadding),
                             child: MarkdownBody(
-                              data: postPage.body,
-                              styleSheet: buildPageMarkdownBody(),
+                              data: postScreen.body,
+                              styleSheet: buildMarkdownBody(),
                               imageBuilder: (uri, title, alt) {
                                 return Image.network(
                                   "${dotenv.env['ILUVATAR_CMS_HOST']}$uri",
@@ -86,7 +86,7 @@ class PostPage extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return ErrorPage();
+                  return ErrorScreen();
                 }
               },
             ),
@@ -121,7 +121,7 @@ class PostHeader extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return FullSizeImage(
+                      return FullSizeImageScreen(
                         image: postImage,
                       );
                     },

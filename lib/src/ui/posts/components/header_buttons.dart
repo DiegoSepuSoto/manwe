@@ -37,7 +37,7 @@ class HeaderInfoButton extends StatelessWidget {
           color: Colors.white,
           alignment: Alignment.center,
           icon: Icon(Icons.info),
-          onPressed: () => Navigator.pushNamed(context, 'service-page',
+          onPressed: () => Navigator.pushNamed(context, 'service-screen',
               arguments: serviceID),
         ),
       ),

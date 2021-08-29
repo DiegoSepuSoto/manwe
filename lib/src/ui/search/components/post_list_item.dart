@@ -20,7 +20,7 @@ class PostListItem extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(
           context,
-          'post-page',
+          'post-screen',
           arguments: id,
         );
       },

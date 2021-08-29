@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:manwe/src/data/repositories/search_page_repository.dart';
-import 'package:manwe/src/domain/blocs/search/search_page_cubit.dart';
+import 'package:manwe/src/data/repositories/search_repository.dart';
+import 'package:manwe/src/domain/blocs/search/search_screen_cubit.dart';
 import 'package:manwe/src/ui/search/components/category_list.dart';
 import 'package:manwe/src/ui/search/components/service_cards.dart';
-import 'package:manwe/src/ui/shared/components/error_page.dart';
+import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -12,36 +12,36 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final searchPageRepository = new SearchPageRepository();
+    final searchRepository = new SearchRepository();
 
     return BlocProvider(
       create: (context) =>
-      SearchPageCubit(searchPageRepository: searchPageRepository)
-        ..searchPageStarted(),
-      child: BlocBuilder<SearchPageCubit, SearchPageState>(
+      SearchScreenCubit(searchRepository: searchRepository)
+        ..searchScreenStarted(),
+      child: BlocBuilder<SearchScreenCubit, SearchScreenState>(
         builder: (context, state) {
-          if (state is SearchPageLoading) {
+          if (state is SearchScreenLoading) {
             return Scaffold(
               body: LoadingCube(),
             );
-          } else if (state is SearchPageSuccessLoad) {
-            final searchPage = state.searchPage;
+          } else if (state is SearchScreenSuccessLoad) {
+            final searchScreen = state.searchScreen;
 
             return SingleChildScrollView(
               child: Column(
                 children: [
                   ServiceCards(
-                    services: searchPage.services
+                    services: searchScreen.services
                   ),
                   CategoryList(
-                    categories: searchPage.categories,
+                    categories: searchScreen.categories,
                   )
                 ],
               ),
             );
           } else {
             return Scaffold(
-              body: ErrorPage(),
+              body: ErrorScreen(),
             );
           }
         },

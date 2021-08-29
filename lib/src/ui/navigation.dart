@@ -19,7 +19,7 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _pages = [
+  static const List<Widget> _screen = [
     PostsScreen(),
     SearchScreen(),
     NotificationsScreen(),
@@ -46,7 +46,7 @@ class _NavigationState extends State<Navigation> {
           MainAppBar(),
           Expanded(
             child: Container(
-              child: _pages.elementAt(_selectedIndex),
+              child: _screen.elementAt(_selectedIndex),
             ),
           ),
         ],

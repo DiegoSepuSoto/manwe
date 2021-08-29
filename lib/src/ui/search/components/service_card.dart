@@ -17,7 +17,7 @@ class ServiceCard extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(
           context,
-          'posts-by-service',
+          'posts-by-service-screen',
           arguments: id,
         );
       },

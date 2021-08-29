@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ErrorPage extends StatelessWidget {
-  const ErrorPage();
+class ErrorScreen extends StatelessWidget {
+  const ErrorScreen();
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:manwe/src/data/repositories/home_page_repository.dart';
-import 'package:manwe/src/domain/blocs/home/home_cubit.dart';
+import 'package:manwe/src/data/repositories/home_repository.dart';
+import 'package:manwe/src/domain/blocs/home/home_screen_cubit.dart';
 import 'package:manwe/src/ui/posts/components/posts_section.dart';
-import 'package:manwe/src/ui/shared/components/error_page.dart';
+import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 
 class PostsScreen extends StatelessWidget {
@@ -11,17 +11,17 @@ class PostsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final homePageRepository = new HomePageRepository();
+    final homeRepository = new HomeRepository();
 
     return BlocProvider(
-      create: (context) => HomeCubit(homePageRepository: homePageRepository)
-        ..homePageStarted(),
-      child: BlocBuilder<HomeCubit, HomeState>(
+      create: (context) => HomeScreenCubit(homeRepository: homeRepository)
+        ..homeScreenStarted(),
+      child: BlocBuilder<HomeScreenCubit, HomeScreenState>(
         builder: (context, state) {
           if (state is HomeLoading) {
             return LoadingCube();
           } else if (state is HomeSuccessLoad) {
-            final servicesWithPosts = state.homePage.servicesWithPosts;
+            final servicesWithPosts = state.homeScreen.servicesWithPosts;
             return ListView.builder(
               padding: EdgeInsets.only(top: 0.0),
               scrollDirection: Axis.vertical,
@@ -35,7 +35,7 @@ class PostsScreen extends StatelessWidget {
               },
             );
           } else {
-            return ErrorPage();
+            return ErrorScreen();
           }
         },
       ),

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/service_repository.dart';
-import 'package:manwe/src/domain/blocs/service/service_posts_page_cubit.dart';
+import 'package:manwe/src/domain/blocs/service/service_posts_screen_cubit.dart';
 import 'package:manwe/src/ui/search/components/post_list.dart';
-import 'package:manwe/src/ui/shared/components/error_page.dart';
+import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
@@ -26,27 +26,27 @@ class PostsByServiceScreen extends StatelessWidget {
 
     return BlocProvider(
       create: (context) =>
-          ServicePostsPageCubit(serviceRepository: serviceRepository)
-            ..servicePostsPageStarted(serviceID),
-      child: BlocBuilder<ServicePostsPageCubit, ServicePostsPageState>(
+          ServicePostsScreenCubit(serviceRepository: serviceRepository)
+            ..servicePostsScreenStarted(serviceID),
+      child: BlocBuilder<ServicePostsScreenCubit, ServicePostsScreenState>(
         builder: (context, state) {
-          if (state is ServicePostsPageLoading) {
+          if (state is ServicePostsScreenLoading) {
             return Scaffold(
               body: LoadingCube(),
             );
-          } else if (state is ServicePostsPageSuccessLoad) {
-            final servicePostsPage = state.servicePostsPage;
+          } else if (state is ServicePostsScreenSuccessLoad) {
+            final servicePostsScreen = state.servicePostsScreen;
             return Scaffold(
               appBar: AppBar(
                 backgroundColor: kPrimaryColor,
                 brightness: Brightness.dark,
-                title: Text(servicePostsPage.name),
+                title: Text(servicePostsScreen.name),
                 actions: [
                   Padding(
                     padding: EdgeInsets.only(right: kDefaultPadding),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, 'service-page',
+                        Navigator.pushNamed(context, 'service-screen',
                             arguments: serviceID);
                       },
                       child: Icon(Icons.info),
@@ -55,12 +55,12 @@ class PostsByServiceScreen extends StatelessWidget {
                 ],
               ),
               body: PostList(
-                posts: servicePostsPage.postsForPreview,
+                posts: servicePostsScreen.postsForPreview,
               ),
             );
           } else {
             return Scaffold(
-              body: ErrorPage(),
+              body: ErrorScreen(),
             );
           }
         },

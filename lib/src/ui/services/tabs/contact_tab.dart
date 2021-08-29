@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/domain/models/service_page.dart';
+import 'package:manwe/src/domain/models/service_screen.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';

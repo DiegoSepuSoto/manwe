@@ -1,7 +1,7 @@
-import 'package:manwe/src/domain/models/home_page.dart';
+import 'package:manwe/src/domain/models/home_screen.dart';
 
-class ServicePostsPage {
-  ServicePostsPage({
+class CategoryPostsScreen {
+  CategoryPostsScreen({
     required this.id,
     required this.name,
     required this.postsForPreview,
@@ -11,8 +11,8 @@ class ServicePostsPage {
   String name;
   List<PostForPreview> postsForPreview;
 
-  factory ServicePostsPage.fromJson(Map<String, dynamic> json) =>
-      ServicePostsPage(
+  factory CategoryPostsScreen.fromJson(Map<String, dynamic> json) =>
+      CategoryPostsScreen(
         id: json["id"],
         name: json["name"],
         postsForPreview: List<PostForPreview>.from(

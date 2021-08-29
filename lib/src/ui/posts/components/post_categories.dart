@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/domain/models/post_page.dart';
+import 'package:manwe/src/domain/models/post_screen.dart';
 import 'package:manwe/src/ui/posts/components/post_category.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 

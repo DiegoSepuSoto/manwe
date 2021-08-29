@@ -1,5 +1,5 @@
-class SearchPage {
-  SearchPage({
+class SearchScreen {
+  SearchScreen({
     required this.services,
     required this.categories,
   });
@@ -7,10 +7,14 @@ class SearchPage {
   List<Service> services;
   List<Category> categories;
 
-  factory SearchPage.fromJson(Map<String, dynamic> json) => SearchPage(
-    services: List<Service>.from(json["services"].map((x) => Service.fromJson(x))),
-    categories: List<Category>.from(json["categories"].map((x) => Category.fromJson(x))),
-  );
+  factory SearchScreen.fromJson(Map<String, dynamic> json) => SearchScreen(
+        services: List<Service>.from(
+          json["services"].map((x) => Service.fromJson(x)),
+        ),
+        categories: List<Category>.from(
+          json["categories"].map((x) => Category.fromJson(x)),
+        ),
+      );
 }
 
 class Category {
@@ -23,9 +27,9 @@ class Category {
   String name;
 
   factory Category.fromJson(Map<String, dynamic> json) => Category(
-    id: json["id"],
-    name: json["name"],
-  );
+        id: json["id"],
+        name: json["name"],
+      );
 }
 
 class Service {
@@ -40,8 +44,8 @@ class Service {
   String logoUrl;
 
   factory Service.fromJson(Map<String, dynamic> json) => Service(
-    id: json["id"],
-    name: json["name"],
-    logoUrl: json["logo_url"],
-  );
+        id: json["id"],
+        name: json["name"],
+        logoUrl: json["logo_url"],
+      );
 }

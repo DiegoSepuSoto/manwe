@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/domain/models/service_page.dart';
+import 'package:manwe/src/domain/models/service_screen.dart';
 import 'package:manwe/src/ui/services/components/profesional_list_item.dart';
 
 class ProfesionalsTab extends StatelessWidget {

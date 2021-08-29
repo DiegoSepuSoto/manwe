@@ -1,5 +1,5 @@
-class ServicePage {
-  ServicePage({
+class ServiceScreen {
+  ServiceScreen({
     required this.id,
     required this.logoUrl,
     required this.name,
@@ -15,14 +15,18 @@ class ServicePage {
   List<Person> persons;
   List<Contact> contacts;
 
-  factory ServicePage.fromJson(Map<String, dynamic> json) => ServicePage(
-    id: json["id"],
-    logoUrl: json["logo_url"],
-    name: json["name"],
-    description: json["description"],
-    persons: List<Person>.from(json["persons"].map((x) => Person.fromJson(x))),
-    contacts: List<Contact>.from(json["contacts"].map((x) => Contact.fromJson(x))),
-  );
+  factory ServiceScreen.fromJson(Map<String, dynamic> json) => ServiceScreen(
+        id: json["id"],
+        logoUrl: json["logo_url"],
+        name: json["name"],
+        description: json["description"],
+        persons: List<Person>.from(
+          json["persons"].map((x) => Person.fromJson(x)),
+        ),
+        contacts: List<Contact>.from(
+          json["contacts"].map((x) => Contact.fromJson(x)),
+        ),
+      );
 }
 
 class Contact {
@@ -39,11 +43,11 @@ class Contact {
   String link;
 
   factory Contact.fromJson(Map<String, dynamic> json) => Contact(
-    id: json["id"],
-    name: json["name"],
-    type: json["type"],
-    link: json["link"],
-  );
+        id: json["id"],
+        name: json["name"],
+        type: json["type"],
+        link: json["link"],
+      );
 }
 
 class Person {
@@ -62,10 +66,10 @@ class Person {
   String profilePictureUrl;
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
-    id: json["id"],
-    name: json["name"],
-    charge: json["charge"],
-    email: json["email"],
-    profilePictureUrl: json["profile_picture_url"],
-  );
+        id: json["id"],
+        name: json["name"],
+        charge: json["charge"],
+        email: json["email"],
+        profilePictureUrl: json["profile_picture_url"],
+      );
 }

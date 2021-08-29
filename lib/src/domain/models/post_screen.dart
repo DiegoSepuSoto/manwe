@@ -1,5 +1,5 @@
-class PostPage {
-  PostPage({
+class PostScreen {
+  PostScreen({
     required this.id,
     required this.title,
     required this.image,
@@ -17,15 +17,17 @@ class PostPage {
   String serviceName;
   List<Category> categories;
 
-  factory PostPage.fromJson(Map<String, dynamic> json) => PostPage(
-    id: json["id"],
-    title: json["title"],
-    image: json["image"],
-    body: json["body"],
-    serviceId: json["service_id"],
-    serviceName: json["service_name"],
-    categories: List<Category>.from(json["categories"].map((x) => Category.fromJson(x))),
-  );
+  factory PostScreen.fromJson(Map<String, dynamic> json) => PostScreen(
+        id: json["id"],
+        title: json["title"],
+        image: json["image"],
+        body: json["body"],
+        serviceId: json["service_id"],
+        serviceName: json["service_name"],
+        categories: List<Category>.from(
+          json["categories"].map((x) => Category.fromJson(x)),
+        ),
+      );
 }
 
 class Category {
@@ -38,7 +40,7 @@ class Category {
   String name;
 
   factory Category.fromJson(Map<String, dynamic> json) => Category(
-    id: json["id"],
-    name: json["name"],
-  );
+        id: json["id"],
+        name: json["name"],
+      );
 }

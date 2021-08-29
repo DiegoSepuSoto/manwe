@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/domain/models/home_page.dart';
+import 'package:manwe/src/domain/models/home_screen.dart';
 import 'package:manwe/src/ui/posts/components/post_card.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 

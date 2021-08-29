@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-MarkdownStyleSheet buildPageMarkdownBody() {
+MarkdownStyleSheet buildMarkdownBody() {
   return MarkdownStyleSheet(
     h1: TextStyle(
       fontSize: 22.0,

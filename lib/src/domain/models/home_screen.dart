@@ -1,14 +1,14 @@
-class HomePage {
-  HomePage({
+class HomeScreen {
+  HomeScreen({
     required this.servicesWithPosts,
   });
 
   List<ServicesWithPost> servicesWithPosts;
 
-  factory HomePage.fromJson(Map<String, dynamic> json) => HomePage(
+  factory HomeScreen.fromJson(Map<String, dynamic> json) => HomeScreen(
         servicesWithPosts: List<ServicesWithPost>.from(
-            json["services_with_posts"]
-                .map((x) => ServicesWithPost.fromJson(x))),
+          json["services_with_posts"].map((x) => ServicesWithPost.fromJson(x)),
+        ),
       );
 }
 
@@ -28,7 +28,8 @@ class ServicesWithPost {
         id: json["id"],
         abbreviation: json["abbreviation"],
         postsForPreview: List<PostForPreview>.from(
-            json["posts_for_preview"].map((x) => PostForPreview.fromJson(x))),
+          json["posts_for_preview"].map((x) => PostForPreview.fromJson(x)),
+        ),
       );
 }
 

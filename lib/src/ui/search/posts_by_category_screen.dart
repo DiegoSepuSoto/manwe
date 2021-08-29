@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/category_repository.dart';
-import 'package:manwe/src/domain/blocs/category/category_posts_page_cubit.dart';
-import 'package:manwe/src/ui/shared/components/error_page.dart';
+import 'package:manwe/src/domain/blocs/category/category_posts_screen_cubit.dart';
+import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
@@ -27,28 +27,28 @@ class PostsByCategoryScreen extends StatelessWidget {
 
     return BlocProvider(
       create: (context) =>
-      CategoryPostsPageCubit(categoryRepository: categoryRepository)..categoryPostsPageStarted(categoryID),
-      child: BlocBuilder<CategoryPostsPageCubit, CategoryPostsPageState>(
+      CategoryPostsScreenCubit(categoryRepository: categoryRepository)..categoryPostsScreenStarted(categoryID),
+      child: BlocBuilder<CategoryPostsScreenCubit, CategoryPostsScreenState>(
         builder: (context, state) {
-          if (state is CategoryPostsPageLoading) {
+          if (state is CategoryPostsScreenLoading) {
             return Scaffold(
               body: LoadingCube(),
             );
-          } else if (state is CategoryPostsPageSuccessLoad) {
-            final categoryPostsPage = state.categoryPostsPage;
+          } else if (state is CategoryPostsScreenSuccessLoad) {
+            final categoryPostsScreen = state.categoryPostsScreen;
             return Scaffold(
               appBar: AppBar(
                 backgroundColor: kPrimaryColor,
                 brightness: Brightness.dark,
-                title: Text(categoryPostsPage.name),
+                title: Text(categoryPostsScreen.name),
               ),
               body: PostList(
-                posts: categoryPostsPage.postsForPreview,
+                posts: categoryPostsScreen.postsForPreview,
               ),
             );
           } else {
             return Scaffold(
-              body: ErrorPage(),
+              body: ErrorScreen(),
             );
           }
         },

@@ -92,7 +92,7 @@ class PostCard extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(
                         context,
-                        'post-page',
+                        'post-screen',
                         arguments: postID,
                       );
                     },
