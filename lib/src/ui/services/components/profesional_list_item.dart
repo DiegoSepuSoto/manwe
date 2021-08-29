@@ -24,7 +24,11 @@ class ProfesionaListItem extends StatelessWidget {
             padding: EdgeInsets.only(left: kDefaultPadding),
             child: CircleAvatar(
               backgroundColor: kPrimaryColor,
-              radius: 30.0,
+              radius: 40.0,
+              child: CircleAvatar(
+                radius: 35.0,
+                backgroundImage: NetworkImage(profilePictureURL),
+              ),
             ),
           ),
           Padding(
