@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:manwe/src/domain/models/service_posts_page.dart';
-import 'package:manwe/src/domain/repositories/abstract_service_page_repository.dart';
+import 'package:manwe/src/domain/repositories/abstract_service_repository.dart';
 
 part 'service_posts_page_state.dart';
 

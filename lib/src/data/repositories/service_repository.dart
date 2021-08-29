@@ -1,6 +1,6 @@
 import 'package:manwe/src/domain/models/service_page.dart';
 import 'package:manwe/src/domain/models/service_posts_page.dart';
-import 'package:manwe/src/domain/repositories/abstract_service_page_repository.dart';
+import 'package:manwe/src/domain/repositories/abstract_service_repository.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dio/dio.dart';
 
@@ -28,7 +28,7 @@ class ServiceRepository implements AbstractServiceRepository {
       final servicePostsPage = ServicePostsPage.fromJson(response.data);
       return servicePostsPage;
     } catch (e) {
-      throw Exception('Error loading service page');
+      throw Exception('Error loading service posts page');
     }
   }
 }

@@ -34,6 +34,7 @@ class CategoryList extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           return CategoryItem(
+            id: categories[index].id,
             title: categories[index].name,
           );
         },
