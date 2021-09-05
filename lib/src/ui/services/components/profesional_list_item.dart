@@ -27,6 +27,7 @@ class ProfesionaListItem extends StatelessWidget {
               radius: 40.0,
               child: CircleAvatar(
                 radius: 35.0,
+                backgroundColor: kPrimaryColor,
                 backgroundImage: NetworkImage(profilePictureURL),
               ),
             ),

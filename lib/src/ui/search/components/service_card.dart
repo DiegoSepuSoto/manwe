@@ -41,6 +41,7 @@ class ServiceCard extends StatelessWidget {
             Container(
               width: size.width * 0.65,
               height: size.height * 0.10,
+              color: Colors.white,
               child: Container(
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(

@@ -37,6 +37,7 @@ class PostCard extends StatelessWidget {
           Container(
             width: size.width * 0.65,
             height: size.height * 0.19,
+            color: Colors.white,
             child: Container(
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
