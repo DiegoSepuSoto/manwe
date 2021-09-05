@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/search_repository.dart';
 import 'package:manwe/src/domain/blocs/search/search_screen_cubit.dart';
 import 'package:manwe/src/ui/search/components/category_list.dart';
+import 'package:manwe/src/ui/search/components/search_button.dart';
 import 'package:manwe/src/ui/search/components/service_cards.dart';
 import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
@@ -30,6 +31,7 @@ class SearchScreen extends StatelessWidget {
             return SingleChildScrollView(
               child: Column(
                 children: [
+                  SearchButton(),
                   ServiceCards(
                     services: searchScreen.services
                   ),

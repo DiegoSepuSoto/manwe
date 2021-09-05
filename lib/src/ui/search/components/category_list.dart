@@ -13,7 +13,7 @@ class CategoryList extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.35,
+      height: size.height * 0.3,
       margin: EdgeInsets.only(
         top: kDefaultPadding,
         left: kDefaultPadding,
