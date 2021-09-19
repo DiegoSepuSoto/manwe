@@ -64,7 +64,7 @@ class PostCard extends StatelessWidget {
             height:
                 size.height > 600 ? size.height * 0.25 : size.height * 0.365,
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(12.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
