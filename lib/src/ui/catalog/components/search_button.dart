@@ -44,7 +44,7 @@ class SearchButton extends StatelessWidget {
               ),
               child: ClipRRect(
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 4, sigmaY: 3),
+                  filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                   child: Center(
                     child: Text(
                       "Buscar por término",
