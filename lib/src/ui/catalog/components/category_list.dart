@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:manwe/src/domain/models/search_screen.dart';
-import 'package:manwe/src/ui/search/components/category_item.dart';
+import 'package:manwe/src/domain/models/catalog_screen.dart';
+import 'package:manwe/src/ui/catalog/components/category_item.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
 class CategoryList extends StatelessWidget {

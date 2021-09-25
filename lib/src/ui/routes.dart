@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manwe/src/ui/posts/post_screen.dart';
-import 'package:manwe/src/ui/search/posts_by_category_screen.dart';
-import 'package:manwe/src/ui/search/posts_by_service_screen.dart';
+import 'package:manwe/src/ui/catalog/posts_by_category_screen.dart';
+import 'package:manwe/src/ui/catalog/posts_by_service_screen.dart';
 import 'package:manwe/src/ui/services/service_with_tabs_screen.dart';
 
 class Routes {

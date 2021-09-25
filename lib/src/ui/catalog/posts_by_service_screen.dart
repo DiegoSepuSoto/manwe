@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/service_repository.dart';
 import 'package:manwe/src/domain/blocs/service/service_posts_screen_cubit.dart';
-import 'package:manwe/src/ui/search/components/post_list.dart';
+import 'package:manwe/src/ui/catalog/components/post_list.dart';
 import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';

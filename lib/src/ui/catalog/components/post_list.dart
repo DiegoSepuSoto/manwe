@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manwe/src/domain/models/home_screen.dart';
-import 'package:manwe/src/ui/search/components/post_list_item.dart';
+import 'package:manwe/src/ui/catalog/components/post_list_item.dart';
 
 class PostList extends StatelessWidget {
   final List<PostForPreview> posts;

@@ -1,5 +1,5 @@
-class SearchScreen {
-  SearchScreen({
+class CatalogScreen {
+  CatalogScreen({
     required this.services,
     required this.categories,
   });
@@ -7,7 +7,7 @@ class SearchScreen {
   List<Service> services;
   List<Category> categories;
 
-  factory SearchScreen.fromJson(Map<String, dynamic> json) => SearchScreen(
+  factory CatalogScreen.fromJson(Map<String, dynamic> json) => CatalogScreen(
         services: List<Service>.from(
           json["services"].map((x) => Service.fromJson(x)),
         ),
