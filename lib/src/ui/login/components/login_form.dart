@@ -26,7 +26,7 @@ class _LoginFormState extends State<LoginForm> {
       child: BlocListener<LoginCubit, LoginState>(
         listener: (context, state) {
           if(!state.isSubmitting && state.isSuccess && !state.isFailed) {
-            Navigator.pushNamed(context, "home");
+            Navigator.pushReplacementNamed(context, "home");
           } else if(!state.isSubmitting && !state.isSuccess && state.isFailed) {
             _showSnackBar(context, "No se pudo ingresar a la aplicación");
           }

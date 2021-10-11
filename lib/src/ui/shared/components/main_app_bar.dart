@@ -43,29 +43,34 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ],
         ),
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(bottom: 10.0),
-              child: CircleAvatar(
-                radius: size.height > 600.0 ? 44 : 30,
-                backgroundColor: Colors.white,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, "profile");
+          },
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10.0),
                 child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/profile.png'),
-                  radius: size.height > 600.0 ? 40 : 26,
+                  radius: size.height > 600.0 ? 44 : 30,
+                  backgroundColor: Colors.white,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/profile.png'),
+                    radius: size.height > 600.0 ? 40 : 26,
+                  ),
                 ),
               ),
-            ),
-            Text(
-              getHeaderName(),
-              style: TextStyle(
-                fontSize: 22.0,
-                color: Colors.white,
-                fontFamily: 'Nunito',
-                fontWeight: FontWeight.bold,
+              Text(
+                getHeaderName(),
+                style: TextStyle(
+                  fontSize: 22.0,
+                  color: Colors.white,
+                  fontFamily: 'Nunito',
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
