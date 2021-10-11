@@ -23,4 +23,12 @@ class UserPreferences {
 
     return user.fullName.split(" ")[0];
   }
+
+  static void deleteUserInfo() {
+    _sharedPreferences!.clear();
+  }
+  
+  static bool userInfoExists() {
+    return _sharedPreferences!.containsKey("user");
+  }
 }

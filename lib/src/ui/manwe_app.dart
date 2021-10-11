@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:manwe/src/shared/user_preferences.dart';
 import 'package:manwe/src/ui/login/login_screen.dart';
 import 'package:manwe/src/ui/navigation.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
@@ -24,7 +25,7 @@ class ManweApp extends StatelessWidget {
             ),
       ),
       routes: Routes.getRoutes(),
-      home: LoginScreen(),
+      home: UserPreferences.userInfoExists() ? Navigation() : LoginScreen(),
     );
   }
 }
