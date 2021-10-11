@@ -36,11 +36,9 @@ class UserPreferences {
   static Future<bool> isUserInfoValid() async {
     if (_sharedPreferences!.containsKey("user")) {
       final user = getUserInfo();
-      print("token antes: ${user.token}");
       bool isTokenValid = await authenticationRepository.validateToken(user.refreshToken);
       if(isTokenValid) {
         user.token = await authenticationRepository.refreshToken(user.refreshToken);
-        print("token despues: ${user.token}");
         return true;
       }
       throw Exception('No shared preferences saved');
