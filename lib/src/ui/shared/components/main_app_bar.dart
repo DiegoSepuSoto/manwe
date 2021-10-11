@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:manwe/src/shared/user_preferences.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -53,7 +57,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             Text(
-              'Estudiante UTEM',
+              getHeaderName(),
               style: TextStyle(
                 fontSize: 22.0,
                 color: Colors.white,
@@ -69,4 +73,8 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(height);
+
+  String getHeaderName() {
+    return "¡Hola, ${UserPreferences.getUserFirstName()}!";
+  }
 }
