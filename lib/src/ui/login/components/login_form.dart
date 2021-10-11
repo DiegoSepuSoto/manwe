@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manwe/src/data/repositories/authentication_repository.dart';
 import 'package:manwe/src/domain/blocs/authentication/login_cubit.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -140,12 +141,15 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   Widget termsAndConditions() {
-    return Text(
-      "Ver términos y condiciones",
-      style: TextStyle(
-        color: kPrimaryColor,
-        fontWeight: FontWeight.bold,
-        fontSize: 17.0,
+    return InkWell(
+      onTap: _launchTermsAndConditions,
+      child: Text(
+        "Ver términos y condiciones",
+        style: TextStyle(
+          color: kPrimaryColor,
+          fontWeight: FontWeight.bold,
+          fontSize: 17.0,
+        ),
       ),
     );
   }
@@ -185,5 +189,10 @@ class _LoginFormState extends State<LoginForm> {
     setState(() {
       _isObscured = !_isObscured;
     });
+  }
+
+  void _launchTermsAndConditions() async {
+    const _url = "https://github.com/DiegoSepuSoto/manwe/blob/master/TERMS_AND_CONDITIONS.md";
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 }
