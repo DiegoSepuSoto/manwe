@@ -15,12 +15,6 @@ class NoGlowingOverscroll extends ScrollBehavior {
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        systemNavigationBarColor: kPrimaryColor,
-      ),
-    );
-
     return ScrollConfiguration(
       behavior: NoGlowingOverscroll(),
       child: AnnotatedRegion<SystemUiOverlayStyle>(
