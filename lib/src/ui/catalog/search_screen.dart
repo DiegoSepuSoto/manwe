@@ -6,6 +6,7 @@ import 'package:manwe/src/ui/catalog/components/post_list.dart';
 import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/shared/components/no_content_screen.dart';
+import 'package:manwe/src/ui/utils/constants.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen();
@@ -27,6 +28,7 @@ class _SearchScreenState extends State<SearchScreen> {
         builder: (context) {
           return Scaffold(
             appBar: AppBar(
+              backgroundColor: kPrimaryColor,
               title: TextField(
                 onSubmitted: (value) {
                   BlocProvider.of<PostsSearchCubit>(context)
@@ -55,8 +57,16 @@ class _SearchScreenState extends State<SearchScreen> {
             body: BlocBuilder<PostsSearchCubit, PostsSearchState>(
               builder: (context, state) {
                 if (state is PostsSearchInitial) {
-                  return Center(
-                    child: Text('Ingresa un término para buscar'),
+                  return Container(
+                    child: Center(
+                      child: Text(
+                        'Ingresa un término para comenzar la búsqueda',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 22.0,
+                        ),
+                      ),
+                    ),
                   );
                 }
                 if (state is PostsSearchLoading) {
