@@ -1,9 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:package_info/package_info.dart';
+
 import 'package:manwe/src/domain/models/user.dart';
 import 'package:manwe/src/shared/user_preferences.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  PackageInfo _packageInfo = PackageInfo(
+    appName: 'Desconocido',
+    packageName: 'Desconocido',
+    version: 'Desconocido',
+    buildNumber: 'Desconocido',
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _initPackageInfo();
+  }
+
+  Future<void> _initPackageInfo() async {
+    final PackageInfo info = await PackageInfo.fromPlatform();
+    setState(() {
+      _packageInfo = info;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     User userInfo = UserPreferences.getUserInfo();
@@ -20,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
           left: kDefaultPadding * 2,
           right: kDefaultPadding * 2,
           top: kDefaultPadding * 2,
-          bottom: kDefaultPadding * 3,
+          bottom: kDefaultPadding * 2,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,8 +77,8 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             Spacer(),
-            ProfileTextTitle("Versión de la app:"),
-            SizedBox(height: 15.0),
+            ProfileTextTitle("Versión de la app: ${_packageInfo.version} (${_packageInfo.buildNumber})"),
+            SizedBox(height: 25.0),
             LogoutButton(),
           ],
         ),
