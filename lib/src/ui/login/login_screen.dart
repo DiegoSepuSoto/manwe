@@ -20,10 +20,15 @@ class LoginScreen extends StatelessWidget {
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
+          systemNavigationBarColor: Colors.white,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.dark,
         ),
         child: Container(
           color: kPrimaryColor,
           child: SafeArea(
+            bottom: false,
             child: Scaffold(
               body: SingleChildScrollView(
                 child: Container(

@@ -15,9 +15,10 @@ class ServiceRepository implements AbstractServiceRepository {
       final userInfo = UserPreferences.getUserInfo();
 
       final url = "${dotenv.env['ELENTARI_HOST']}/v1/service/" + id;
-      final response = await _client.get(url);
       _client.options.headers["Authorization"] = "Bearer ${userInfo.token}";
       _client.interceptors.add(unauthorizedInterceptor(_client));
+
+      final response = await _client.get(url);
 
       final serviceScreen = ServiceScreen.fromJson(response.data);
       return serviceScreen;
@@ -28,10 +29,16 @@ class ServiceRepository implements AbstractServiceRepository {
 
   Future<ServicePostsScreen> getServicePostsScreen(String id) async {
     try {
+      Dio _client = new Dio();
+
+      final userInfo = UserPreferences.getUserInfo();
+
       final url = "${dotenv.env['ELENTARI_HOST']}/v1/service/" + id + "/posts";
-      final response = await Dio().get(
-        url,
-      );
+      _client.options.headers["Authorization"] = "Bearer ${userInfo.token}";
+      _client.interceptors.add(unauthorizedInterceptor(_client));
+
+      final response = await _client.get(url);
+
       final servicePostsScreen = ServicePostsScreen.fromJson(response.data);
       return servicePostsScreen;
     } catch (e) {
