@@ -12,6 +12,9 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final formKey = GlobalKey<FormState>();
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
+
   bool _isObscured = true;
 
   final authenticationRepository = new AuthenticationRepositoryImplementation();
@@ -76,6 +79,12 @@ class _LoginFormState extends State<LoginForm> {
     return BlocBuilder<LoginCubit, LoginState>(
       builder: (context, state) {
         return TextFormField(
+          focusNode: _emailFocusNode,
+          textInputAction: TextInputAction.next,
+          onFieldSubmitted: (_) {
+            _emailFocusNode.unfocus();
+            FocusScope.of(context).requestFocus(_passwordFocusNode);
+          },
           cursorColor: kPrimaryColor,
           decoration: InputDecoration(
             fillColor: Colors.white,
@@ -107,6 +116,11 @@ class _LoginFormState extends State<LoginForm> {
   Widget passwordInput() {
     return BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
       return TextFormField(
+        focusNode: _passwordFocusNode,
+        textInputAction: TextInputAction.done,
+        onFieldSubmitted: (_) {
+          _passwordFocusNode.unfocus();
+        },
         obscureText: _isObscured,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
