@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:manwe/src/shared/user_preferences.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -52,18 +49,27 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
               Padding(
                 padding: EdgeInsets.only(bottom: 10.0),
                 child: CircleAvatar(
-                  radius: size.height > 600.0 ? 44 : 30,
+                  radius: size.height > 600.0 ? 38 : 26,
                   backgroundColor: Colors.white,
                   child: CircleAvatar(
                     backgroundImage: AssetImage('assets/images/profile.png'),
-                    radius: size.height > 600.0 ? 40 : 26,
+                    radius: size.height > 600.0 ? 34 : 22,
                   ),
                 ),
               ),
               Text(
                 getHeaderName(),
                 style: TextStyle(
-                  fontSize: 22.0,
+                  fontSize: 18.0,
+                  color: Colors.white,
+                  fontFamily: 'Nunito',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                "Ver Perfil",
+                style: TextStyle(
+                  fontSize: 14.0,
                   color: Colors.white,
                   fontFamily: 'Nunito',
                   fontWeight: FontWeight.bold,

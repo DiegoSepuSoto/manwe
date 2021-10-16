@@ -27,7 +27,7 @@ class LoginScreen extends StatelessWidget {
             child: Scaffold(
               body: SingleChildScrollView(
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.8,
+                  height: MediaQuery.of(context).size.height * 0.85,
                   child: Column(
                     children: [
                       UTEMLogo(),

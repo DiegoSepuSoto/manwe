@@ -7,6 +7,7 @@ import 'package:manwe/src/ui/catalog/components/search_button.dart';
 import 'package:manwe/src/ui/catalog/components/service_cards.dart';
 import 'package:manwe/src/ui/shared/components/error_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
+import 'package:manwe/src/ui/utils/constants.dart';
 
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen();
@@ -37,6 +38,9 @@ class CatalogScreen extends StatelessWidget {
                   ),
                   CategoryList(
                     categories: catalogScreen.categories,
+                  ),
+                  SizedBox(
+                    height: kDefaultPadding,
                   )
                 ],
               ),
