@@ -43,8 +43,8 @@ android {
         applicationId "com.diegosepu.manwe"
         minSdkVersion 28
         targetSdkVersion 30
-        versionCode 9
-        versionName "0.0.1"
+        versionCode 10
+        versionName "0.0.2"
     }
 
     signingConfigs {
