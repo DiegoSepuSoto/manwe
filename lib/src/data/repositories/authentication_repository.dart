@@ -5,13 +5,14 @@ import 'package:manwe/src/domain/repositories/abstract_authentication_repository
 
 class AuthenticationRepositoryImplementation implements AbstractAuthenticationRepository {
   @override
-  Future<User> logIn(String email, password) async {
+  Future<User> logIn(String email, password, deviceID) async {
     try {
       final url = "${dotenv.env['ELENTARI_HOST']}/v1/auth/login";
 
       final data = {
         "email": email,
         "password": password,
+        "device_id": deviceID,
       };
 
       final response = await Dio().post(

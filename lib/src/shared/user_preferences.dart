@@ -14,6 +14,14 @@ class UserPreferences {
     authenticationRepository = AuthenticationRepositoryImplementation();
   }
 
+  static Future setDeviceID(String deviceID) async {
+    await _sharedPreferences!.setString("deviceID", deviceID);
+  }
+
+  static String getDeviceID() {
+    return _sharedPreferences!.getString("deviceID") ?? "";
+}
+
   static Future setUserInfo(User userInfo) async {
     await _sharedPreferences!.setString("user", json.encode(userInfo));
   }
@@ -30,7 +38,7 @@ class UserPreferences {
   }
 
   static void deleteUserInfo() {
-    _sharedPreferences!.clear();
+    _sharedPreferences!.remove("user");
   }
 
   static Future<String> getUpdatedToken() async {

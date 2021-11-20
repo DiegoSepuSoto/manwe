@@ -5,7 +5,6 @@ import 'package:equatable/equatable.dart';
 import 'package:manwe/src/domain/repositories/abstract_authentication_repository.dart';
 import 'package:manwe/src/shared/user_preferences.dart';
 import 'package:manwe/src/ui/utils/validators.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'login_state.dart';
 
@@ -27,7 +26,7 @@ class LoginCubit extends Cubit<LoginState> {
     emit(state.copyWith(isSubmitting: true));
     try {
       final user =
-          await authenticationRepository.logIn(state.email, state.password);
+          await authenticationRepository.logIn(state.email, state.password, UserPreferences.getDeviceID());
 
       UserPreferences.setUserInfo(user);
 
