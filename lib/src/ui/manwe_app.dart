@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:manwe/src/data/services/push_notifications_service.dart';
 import 'package:manwe/src/shared/user_preferences.dart';
 import 'package:manwe/src/ui/login/login_screen.dart';
 import 'package:manwe/src/ui/navigation.dart';
@@ -6,8 +7,23 @@ import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:manwe/src/ui/routes.dart';
 
-class ManweApp extends StatelessWidget {
+class ManweApp extends StatefulWidget {
   const ManweApp();
+
+  @override
+  State<ManweApp> createState() => _ManweAppState();
+}
+
+class _ManweAppState extends State<ManweApp> {
+
+  @override
+  void initState() {
+    super.initState();
+
+    PushNotificationsService.messageStream.listen((message) {
+      print("a message was received");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
