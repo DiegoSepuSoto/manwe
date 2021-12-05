@@ -15,8 +15,8 @@ objetivo de que los estudiantes sepan más de ellos.
 
 Las variables de entorno necesarias para la ejecución del artefacto son:
 
-ELENTARI_HOST
-ILUVATAR_CMS_HOST
+- ELENTARI_HOST
+- ILUVATAR_CMS_HOST
 
 ## Entorno de compilación/ejecución
 
