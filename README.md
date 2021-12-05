@@ -1,16 +1,28 @@
-# manwe
+# App Manwë - Proyecto Kümelen
 
-Kumelen App
+## Descripción del Proyecto
 
-## Getting Started
+"Kümelen" nace desde la necesidad de implementar, con ayuda de elementos tecnológicos, nuevos canales de comunicación
+que le permitan a los estudiantes de la UTEM conocer e informarse sobre los servicios estudiantiles que pueden apoyar
+en las dimensiones extraacadémicas de su vida universitaria.
 
-This project is a starting point for a Flutter application.
+## Descripción de la aplicación
 
-A few resources to get you started if this is your first Flutter project:
+En la aplicación se podrán visualizar diferentes contenidos creados por los servicios estudiantiles de la UTEM, con el
+objetivo de que los estudiantes sepan más de ellos.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Variables de entorno
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Las variables de entorno necesarias para la ejecución del artefacto son:
+
+ELENTARI_HOST
+ILUVATAR_CMS_HOST
+
+## Entorno de compilación/ejecución
+
+Para la compilación y ejecución del proyecto, es necesario contar con un ambiente de desarrollo completo de Flutter.
+
+### Nombre en clave
+
+El nombre en clave utilizado para este artefacto, "Manwë", viene de la mitología creada por el autor J.R.R. Tolkien,
+donde Manwë es el Valär con mayor poder dentro de su raza. [Ver Más](https://es.wikipedia.org/wiki/Manw%C3%AB)
