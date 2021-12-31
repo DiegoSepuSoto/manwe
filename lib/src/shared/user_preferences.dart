@@ -61,4 +61,12 @@ class UserPreferences {
     }
     throw Exception('No shared preferences saved');
   }
+
+  static Future setShowOnBoarding(bool showOnBoarding) async {
+    await _sharedPreferences!.setBool("showOnBoarding", showOnBoarding);
+  }
+
+  static Future<bool> getShowOnBoarding() async {
+    return _sharedPreferences!.getBool("showOnBoarding") ?? false;
+  }
 }

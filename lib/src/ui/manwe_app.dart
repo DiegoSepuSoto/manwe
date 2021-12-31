@@ -3,6 +3,7 @@ import 'package:manwe/src/data/services/push_notifications_service.dart';
 import 'package:manwe/src/shared/user_preferences.dart';
 import 'package:manwe/src/ui/login/login_screen.dart';
 import 'package:manwe/src/ui/navigation.dart';
+import 'package:manwe/src/ui/onboarding/onboarding_screen.dart';
 import 'package:manwe/src/ui/shared/components/loading_cube.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:manwe/src/ui/routes.dart';
@@ -43,12 +44,22 @@ class _ManweAppState extends State<ManweApp> {
       ),
       routes: Routes.getRoutes(),
       home: FutureBuilder<bool>(
-        future: UserPreferences.isUserInfoValid(),
+        future: UserPreferences.getShowOnBoarding(),
         builder: (context, snapshot) {
           if(snapshot.hasData) {
-            return Navigation();
+            return OnBoardingScreen();
           } else if(snapshot.hasError) {
-            return LoginScreen();
+            return FutureBuilder<bool>(
+              future: UserPreferences.isUserInfoValid(),
+              builder: (context, snapshot) {
+                if(snapshot.hasData) {
+                  return Navigation();
+                } else if(snapshot.hasError) {
+                  return LoginScreen();
+                }
+                return Scaffold(body: LoadingCube());
+              },
+            );
           }
           return Scaffold(body: LoadingCube());
         },
