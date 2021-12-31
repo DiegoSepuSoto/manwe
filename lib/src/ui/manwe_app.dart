@@ -44,22 +44,12 @@ class _ManweAppState extends State<ManweApp> {
       ),
       routes: Routes.getRoutes(),
       home: FutureBuilder<bool>(
-        future: UserPreferences.getShowOnBoarding(),
+        future: UserPreferences.isUserInfoValid(),
         builder: (context, snapshot) {
           if(snapshot.hasData) {
-            return OnBoardingScreen();
+            return Navigation();
           } else if(snapshot.hasError) {
-            return FutureBuilder<bool>(
-              future: UserPreferences.isUserInfoValid(),
-              builder: (context, snapshot) {
-                if(snapshot.hasData) {
-                  return Navigation();
-                } else if(snapshot.hasError) {
-                  return LoginScreen();
-                }
-                return Scaffold(body: LoadingCube());
-              },
-            );
+            return UserPreferences.getShowOnBoarding() ? OnBoardingScreen() : LoginScreen();
           }
           return Scaffold(body: LoadingCube());
         },

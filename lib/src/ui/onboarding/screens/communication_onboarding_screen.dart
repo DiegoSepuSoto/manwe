@@ -8,7 +8,7 @@ PageModel communicationOnBoardingScreen() {
         Padding(
             padding: EdgeInsets.only(top: 40.0, bottom: 20.0),
             child: Text(
-              "Busca apoyo",
+              "Estamos contigo",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40.0,

@@ -12,6 +12,7 @@ class UserPreferences {
   static Future init() async {
     _sharedPreferences = await SharedPreferences.getInstance();
     authenticationRepository = AuthenticationRepositoryImplementation();
+    await setShowOnBoarding(getShowOnBoarding());
   }
 
   static Future setDeviceID(String deviceID) async {
@@ -66,7 +67,7 @@ class UserPreferences {
     await _sharedPreferences!.setBool("showOnBoarding", showOnBoarding);
   }
 
-  static Future<bool> getShowOnBoarding() async {
-    return _sharedPreferences!.getBool("showOnBoarding") ?? false;
+  static bool getShowOnBoarding() {
+    return _sharedPreferences!.getBool("showOnBoarding") ?? true;
   }
 }

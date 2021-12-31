@@ -9,7 +9,6 @@ Future<void> main() async {
 
   await dotenv.load(fileName: '.env');
   await UserPreferences.init();
-  await UserPreferences.setShowOnBoarding(true);
 
   await PushNotificationsService.initializeApp();
 
