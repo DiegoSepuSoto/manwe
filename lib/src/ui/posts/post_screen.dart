@@ -71,6 +71,9 @@ class PostScreen extends StatelessWidget {
                             child: MarkdownBody(
                               data: postScreen.body,
                               styleSheet: buildMarkdownBody(),
+                              onTapLink: (text, url, title) {
+                                showAlertDialogToOpenLink(context, url!);
+                              },
                               imageBuilder: (uri, title, alt) {
                                 return Image.network(
                                   "${dotenv.env['ILUVATAR_CMS_HOST']}$uri",
