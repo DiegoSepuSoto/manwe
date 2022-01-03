@@ -77,11 +77,7 @@ class _NavigationState extends State<Navigation> {
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: kPrimaryColor,
-          child: Icon(Icons.mail_outline),
-          onPressed: handleSendFeedback,
-        ));
+      );
   }
 }
 
