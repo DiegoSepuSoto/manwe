@@ -3,7 +3,19 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:manwe/src/ui/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-MarkdownStyleSheet buildMarkdownBody() {
+MarkdownStyleSheet buildNotificationMarkdownBody() {
+  return MarkdownStyleSheet(
+    h1: TextStyle(
+      fontSize: 15.0,
+      fontWeight: FontWeight.bold,
+    ),
+    p: TextStyle(
+      fontSize: 14.0,
+    ),
+  );
+}
+
+MarkdownStyleSheet buildPostMarkdownBody() {
   return MarkdownStyleSheet(
     h1: TextStyle(
       fontSize: 22.0,

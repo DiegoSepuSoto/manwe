@@ -51,14 +51,16 @@ class PostScreen extends StatelessWidget {
                             serviceID: postScreen.serviceId,
                             serviceName: postScreen.serviceName,
                           ),
-                          PostCategories(
+                          postScreen.categories.length > 0 ? PostCategories(
                             categories: postScreen.categories,
-                          ),
+                          ) : Container(),
                           Container(
+                            margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
                             alignment: Alignment.center,
                             padding: EdgeInsets.only(top: kDefaultPadding),
                             child: Text(
                               postScreen.title,
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24.0,
@@ -70,7 +72,7 @@ class PostScreen extends StatelessWidget {
                             padding: EdgeInsets.all(kDefaultPadding),
                             child: MarkdownBody(
                               data: postScreen.body,
-                              styleSheet: buildMarkdownBody(),
+                              styleSheet: buildPostMarkdownBody(),
                               onTapLink: (text, url, title) {
                                 showAlertDialogToOpenLink(context, url!);
                               },
